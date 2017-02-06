@@ -9,12 +9,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 
 public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtCourses;
-	private JTextField txtTodo;
 
 	/**
 	 * Launch the application.
@@ -46,31 +45,34 @@ public class MainMenu extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
+		JPanel mainMenuPanel= new JPanel();
+		
 		JPanel mainCoursesPanel = new JPanel();
-		contentPane.add(mainCoursesPanel, BorderLayout.WEST);
+		mainMenuPanel.add(mainCoursesPanel);
 		mainCoursesPanel.setLayout(new BoxLayout(mainCoursesPanel, BoxLayout.Y_AXIS));
 		
-		txtCourses = new JTextField();
-		txtCourses.setText("Courses");
-		mainCoursesPanel.add(txtCourses);
-		txtCourses.setColumns(10);
-		
 		JPanel coursesPanel = new JPanel();
-		mainCoursesPanel.add(coursesPanel);
+		mainMenuPanel.add(coursesPanel);
 		coursesPanel.setLayout(new BoxLayout(coursesPanel, BoxLayout.Y_AXIS));
 		
+		JLabel lblCourses = new JLabel("Courses");
+		mainMenuPanel.add(lblCourses);
+		
 		JPanel mainToDoPanel = new JPanel();
-		contentPane.add(mainToDoPanel, BorderLayout.EAST);
+		mainMenuPanel.add(mainToDoPanel);
 		mainToDoPanel.setLayout(new BoxLayout(mainToDoPanel, BoxLayout.Y_AXIS));
 		
-		txtTodo = new JTextField();
-		txtTodo.setText("To-Do");
-		mainToDoPanel.add(txtTodo);
-		txtTodo.setColumns(10);
-		
 		JPanel ToDoPanel = new JPanel();
-		mainToDoPanel.add(ToDoPanel);
+		mainMenuPanel.add(ToDoPanel);
 		ToDoPanel.setLayout(new BoxLayout(ToDoPanel, BoxLayout.Y_AXIS));
+		
+		JLabel lblTodo = new JLabel("To-Do");
+		mainMenuPanel.add(lblTodo);
+		
+		tabbedPane.addTab("Main Menu", null, mainMenuPanel, "Main Menu");
+		
+		JPanel assignmentsPanel = new JPanel();
+		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
 	}
 
 }
