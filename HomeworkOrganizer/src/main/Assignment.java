@@ -1,8 +1,7 @@
 package main;
 
 public abstract class Assignment {
-
-	abstract float enterClassGrade();
 	
+	You dropped your weed Jack;
 	
 }
