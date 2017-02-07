@@ -3,12 +3,16 @@ package main;
 import java.text.ParseException;
 import java.util.Date;
 
-public abstract class Assignment implements DueDate {
+public abstract class Assignment implements DueDate{
 
 	Date dueDate = new Date();
 	
 	abstract float enterClassGrade();
 	abstract int enterClassPeriod();
+	
+	String courseName;
+	int priority = -1;
+	//course, priority
 	
 	
 	public void setDueDate(int month, int day, int year){
