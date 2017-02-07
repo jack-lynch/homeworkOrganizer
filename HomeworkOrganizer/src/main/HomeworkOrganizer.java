@@ -2,14 +2,12 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
+import javax.swing.border.EmptyBorder;
 
 public class HomeworkOrganizer extends JFrame {
 
@@ -42,17 +40,24 @@ public class HomeworkOrganizer extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
+		
+		// Creates the hash map for corresponding period numbers and course names
+		HashMap<Integer, String> courseList = new HashMap<Integer, String>();
+		
+		
+		
+		// Creates the tabbed panel
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
-		
-		
 		MainPanel mainMenuPanel = new MainPanel();
-		
 		tabbedPane.addTab("Main Menu", null, mainMenuPanel, "Main Menu");
 		
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
 		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
+		
+		SchedulePanel schedulePanel = new SchedulePanel();
+		tabbedPane.addTab("Add Course", null, schedulePanel, null);
 	}
 
 }
