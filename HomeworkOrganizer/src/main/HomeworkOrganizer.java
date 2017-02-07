@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 public class HomeworkOrganizer extends JFrame {
 
 	private JPanel contentPane;
+	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
 
 	/**
 	 * Launch the application.
@@ -42,7 +43,7 @@ public class HomeworkOrganizer extends JFrame {
 		
 		
 		// Creates the hash map for corresponding period numbers and course names
-		HashMap<Integer, String> courseList = new HashMap<Integer, String>();
+
 		
 		
 		
