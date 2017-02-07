@@ -3,7 +3,7 @@ package main;
 import java.text.ParseException;
 import java.util.Date;
 
-public abstract class Assignment implements DueDate {
+public abstract class Assignment implements DueDate{
 
 	Date dueDate = new Date();
 	
@@ -16,6 +16,7 @@ public abstract class Assignment implements DueDate {
 		try {
 			dueDate = dateFormat.parse(month + "/" + day + "/" + year);
 		} catch (ParseException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

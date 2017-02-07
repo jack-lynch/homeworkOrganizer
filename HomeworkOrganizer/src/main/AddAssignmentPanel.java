@@ -19,7 +19,7 @@ public class AddAssignmentPanel extends JPanel {
 		
 		JComboBox classesDropdown = new JComboBox();
 		add(classesDropdown);
-		//for(int i = 0; i < courseList)
+	//	for(int i = 0; i < )
 		
 		txtPriority = new JTextField();
 		txtPriority.setText("Priority");
