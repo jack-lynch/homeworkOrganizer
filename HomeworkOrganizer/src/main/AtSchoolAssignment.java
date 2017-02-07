@@ -1,9 +1,8 @@
 package main;
 
-public abstract class AtSchoolAssignment {
+public abstract class AtSchoolAssignment extends Assignment{
 	
-	abstract boolean isHomework();
-	abstract boolean isTakeHomeTest();
-	abstract boolean studyAtHome();
+	abstract boolean isSchoolWork();
+	abstract boolean isTest();
 
 }

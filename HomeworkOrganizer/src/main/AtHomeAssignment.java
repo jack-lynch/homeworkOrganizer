@@ -1,5 +1,5 @@
 package main;
 
-public abstract class AtHomeAssignment {
+public abstract class AtHomeAssignment extends Assignment{
 
 }
