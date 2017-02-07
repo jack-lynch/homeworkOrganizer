@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 public class HomeworkOrganizer extends JFrame {
 
 	private JPanel contentPane;
-	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
+	public HashMap<Integer, String> courseList = new HashMap<Integer, String>();
 
 	/**
 	 * Launch the application.
