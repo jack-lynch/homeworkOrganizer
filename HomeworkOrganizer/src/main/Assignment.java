@@ -3,7 +3,7 @@ package main;
 import java.text.ParseException;
 import java.util.Date;
 
-public abstract class Assignment implements DueDate{
+public abstract class Assignment implements DueDate {
 
 	Date dueDate = new Date();
 	
