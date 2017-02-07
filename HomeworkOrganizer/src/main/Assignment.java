@@ -8,6 +8,7 @@ public abstract class Assignment implements DueDate{
 	protected double classGrade;
 	protected int priority = -1;
 	protected String courseName;
+	protected String title;
 	protected int classPeriod;
 	
 	Date dueDate = new Date();
@@ -23,6 +24,10 @@ public abstract class Assignment implements DueDate{
 		}
 	}
 
+	public String toString(){
+		return courseName + " " + title + ", due " + dueDate;
+	}
+	
 	protected double getClassGrade() {
 		return classGrade;
 	}
@@ -55,6 +60,15 @@ public abstract class Assignment implements DueDate{
 
 	protected void setClassPeriod(int classPeriod) {
 		this.classPeriod = classPeriod;
+	}
+
+	
+protected String getTitle() {
+		return title;
+	}
+
+	protected void setTitle(String title) {
+		this.title = title;
 	}
 
 }

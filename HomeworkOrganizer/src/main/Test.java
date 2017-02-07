@@ -4,8 +4,9 @@ public class Test extends AtSchoolAssignment {
 
 	boolean isTest;
 	
-	public Test(String course, int month, int day, int year){
+	public Test(String course, String title, int month, int day, int year){
 		setCourseName(course);
+		setTitle(title);
 		setDueDate(month, day, year);
 		setPriority(3);
 		isTest = true;

@@ -7,9 +7,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
 public class AddAssignmentPanel extends JPanel {
+	
 	private JTextField txtAssignmentLabel;
 	private JTextField txtPriority;
 	public AddAssignmentPanel() {
+		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		txtAssignmentLabel = new JTextField();
