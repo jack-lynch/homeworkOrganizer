@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 
-public class MainMenu extends JFrame {
+public class HomeworkOrganizer extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +22,7 @@ public class MainMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu frame = new MainMenu();
+					HomeworkOrganizer frame = new HomeworkOrganizer();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class MainMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MainMenu() {
+	public HomeworkOrganizer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
@@ -45,33 +45,13 @@ public class MainMenu extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
-		JPanel mainMenuPanel= new JPanel();
 		
-		JPanel mainCoursesPanel = new JPanel();
-		mainMenuPanel.add(mainCoursesPanel);
-		mainCoursesPanel.setLayout(new BoxLayout(mainCoursesPanel, BoxLayout.Y_AXIS));
 		
-		JPanel coursesPanel = new JPanel();
-		mainMenuPanel.add(coursesPanel);
-		coursesPanel.setLayout(new BoxLayout(coursesPanel, BoxLayout.Y_AXIS));
-		
-		JLabel lblCourses = new JLabel("Courses");
-		mainMenuPanel.add(lblCourses);
-		
-		JPanel mainToDoPanel = new JPanel();
-		mainMenuPanel.add(mainToDoPanel);
-		mainToDoPanel.setLayout(new BoxLayout(mainToDoPanel, BoxLayout.Y_AXIS));
-		
-		JPanel ToDoPanel = new JPanel();
-		mainMenuPanel.add(ToDoPanel);
-		ToDoPanel.setLayout(new BoxLayout(ToDoPanel, BoxLayout.Y_AXIS));
-		
-		JLabel lblTodo = new JLabel("To-Do");
-		mainMenuPanel.add(lblTodo);
+		MainPanel mainMenuPanel = new MainPanel();
 		
 		tabbedPane.addTab("Main Menu", null, mainMenuPanel, "Main Menu");
 		
-		JPanel assignmentsPanel = new JPanel();
+		AssignmentPanel assignmentsPanel = new AssignmentPanel();
 		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
 	}
 
