@@ -16,7 +16,6 @@ public abstract class Assignment implements DueDate{
 		try {
 			dueDate = dateFormat.parse(month + "/" + day + "/" + year);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
