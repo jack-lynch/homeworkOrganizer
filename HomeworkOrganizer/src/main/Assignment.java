@@ -10,6 +10,8 @@ public abstract class Assignment implements DueDate{
 	abstract float enterClassGrade();
 	abstract int enterClassPeriod();
 	
+	String courseName;
+	int priority = -1;
 	
 	public void setDueDate(int month, int day, int year){
 		checkDate(month, day, year);
