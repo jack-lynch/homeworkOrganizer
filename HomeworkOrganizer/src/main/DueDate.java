@@ -2,20 +2,21 @@ package main;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
+
+import javax.swing.JOptionPane;
 
 public interface DueDate {
 	
+	Date currentDate = new Date();
 	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 	
-	public boolean hasDueDate();
-	public void setDueDate();//Sets due Date...
-	public boolean checkLate();//Checks date to current date..
+	//public boolean hasDueDate();
 	
-	//Check to make sure date is in correct form
+	//Check to make sure date is in correct form...
 	default void checkDate(int month, int day, int year){
 		if(month > 12 || month < 1){
-			//return a message
+			JOptionPane.showMessageDialog(null, "Invalid month.");
 		} else if (month <= 12 || month > 0){
 			switch(month){
 			case 1:
@@ -26,7 +27,7 @@ public interface DueDate {
 			case 10:
 			case 12:
 				if(day > 31 || day < 1){
-					//return a message
+					JOptionPane.showMessageDialog(null, "Invalid day.");
 				}
 				break;
 			case 4:
@@ -34,15 +35,15 @@ public interface DueDate {
 			case 9:
 			case 11:
 				if(day > 30 || day < 1){
-					//return a message
+					JOptionPane.showMessageDialog(null, "Invalid v.");
 				}
 			case 2:
 				if(day > 28 || day < 1){
-					//return a message
+					JOptionPane.showMessageDialog(null, "Invalid day.");
 				}
 			default:
 				if(day > 31 || day < 1){
-					//return a message
+					JOptionPane.showMessageDialog(null, "Invalid day.");
 				}
 			}
 			
@@ -54,4 +55,15 @@ public interface DueDate {
 		} 
 	}
 	
+	//Returns true if an assignment is late...
+	default boolean checkLate(Date due){
+		if(currentDate.compareTo(due) > 0){
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+
+	void setDueDate(int month, int day, int year);
 }

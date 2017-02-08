@@ -7,9 +7,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
 public class AddAssignmentPanel extends JPanel {
+	
 	private JTextField txtAssignmentLabel;
 	private JTextField txtPriority;
 	public AddAssignmentPanel() {
+		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		txtAssignmentLabel = new JTextField();
@@ -19,7 +21,7 @@ public class AddAssignmentPanel extends JPanel {
 		
 		JComboBox classesDropdown = new JComboBox();
 		add(classesDropdown);
-		
+		//for(int i = 0; i < courseList)
 		
 		txtPriority = new JTextField();
 		txtPriority.setText("Priority");
