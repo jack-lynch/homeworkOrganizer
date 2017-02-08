@@ -22,7 +22,7 @@ public class AddAssignmentPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		txtAssignmentLabel = new JTextField();
-		txtAssignmentLabel.setText("Assignment Name");
+		txtAssignmentLabel.setToolTipText("Assignment Name");
 		add(txtAssignmentLabel);
 		txtAssignmentLabel.setColumns(10);
 		
@@ -34,7 +34,7 @@ public class AddAssignmentPanel extends JPanel {
 		refreshDropdown();
 		
 		txtPriority = new JTextField();
-		txtPriority.setText("Priority");
+		txtPriority.setToolTipText("Priority");
 		add(txtPriority);
 		txtPriority.setColumns(10);
 		
@@ -56,7 +56,7 @@ public class AddAssignmentPanel extends JPanel {
 		
 		
 		txtYearDue = new JTextField();
-		txtYearDue.setText("Year Due");
+		txtYearDue.setToolTipText("Year Due");
 		add(txtYearDue);
 		txtYearDue.setColumns(10);
 		
