@@ -52,7 +52,7 @@ public abstract class Assignment implements DueDate{
 	}
 
 	public String toString(){
-		return course.getName() + " " + title + ", due " + dueDate;
+		return course.getName() + " - " + title + ", due " + dueDate;
 	}
 	
 	protected double getClassGrade() {
