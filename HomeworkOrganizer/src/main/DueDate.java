@@ -12,7 +12,6 @@ public interface DueDate {
 	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 	
 	//public boolean hasDueDate();
-	public void setDueDate();//Sets due Date...
 	
 	//Check to make sure date is in correct form...
 	default void checkDate(int month, int day, int year){
@@ -65,4 +64,6 @@ public interface DueDate {
 		}
 		
 	}
+
+	void setDueDate(int month, int day, int year);
 }
