@@ -11,6 +11,10 @@ import javax.swing.border.EmptyBorder;
 
 public class HomeworkOrganizer extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
 
