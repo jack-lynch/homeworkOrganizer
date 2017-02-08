@@ -2,7 +2,6 @@ package main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -48,12 +47,14 @@ public class AddCoursePanel extends JPanel {
 		JButton btnAddCourse = new JButton("Add Course To Schedule");
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				coursePeriod = Integer.parseInt(periodTextField.getText());
 				courseName = courseNameTextField.getText();
 				coursePercentage = Integer.parseInt(percentageTextField.getText());
 				
 				Course course = new Course(coursePeriod, courseName, coursePercentage);
+				
+				HomeworkOrganizer.courseList.add(course);
 				
 				course.setPeriod(coursePeriod);
 				course.setName(courseName);
@@ -63,7 +64,9 @@ public class AddCoursePanel extends JPanel {
 				courseNameTextField.setText("");
 				percentageTextField.setText("");
 				
-				System.out.println("The period of this class is " + course.getPeriod() + ".\n" + "The name of this course is " + course.getName() + ".\n" + "The grade in this class is " + course.getGrade() + ".");
+				System.out.println("The period of this class is " + course.getPeriod() + ".\n" 
+				+ "The name of this course is " + course.getName() + ".\n" 
+				+ "The grade in this class is " + course.getGrade() + ".");
 			}
 
 		});
