@@ -2,19 +2,19 @@ package main;
 
 public class Course {
 
-	private String name;
 	private int period; 
+	private String name;
 	private double grade;
 	
-	public Course(String name, int period, double grade){
-		this.name = name;
+	public Course(int period, String name, double grade){
 		this.period = period;
+		this.name = name;
 		this.grade = grade;
 	}
 	
-	public Course(String name, int period){
-		this.name = name;
+	public Course(int period, String name){
 		this.period = period;
+		this.name = name;
 		grade = 100;
 	}
 

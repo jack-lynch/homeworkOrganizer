@@ -25,8 +25,6 @@ public class SchedulePanel extends JPanel {
 	protected String courseName;
 	protected double coursePercentage;
 
-	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
-
 	public SchedulePanel() {
 
 		JLabel lblPeriod = new JLabel("Period");
@@ -51,47 +49,12 @@ public class SchedulePanel extends JPanel {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				//Trying the period text field
-				try {
-					
-					if (periodTextField != null && periodTextField.getText() != "") {
-						coursePeriod = Integer.parseInt(periodTextField.getText());
-					} else {
-						
-					}
-					
-				} catch (Exception c) {
-					c.printStackTrace();
-				}
-
-				//Trying the course name text field
-				try {
-					
-					if(courseNameTextField != null && courseNameTextField.getText() != "") {
-						courseName = courseNameTextField.getText();
-					} else {
-						
-					}
-					
-				} catch (Exception c) {
-					c.printStackTrace();
-				}
-
-				//Trying the percetage text field
-				try {
-					if (percentageTextField != null && percentageTextField.getText() != null) {
-						coursePercentage = Integer.parseInt(percentageTextField.getText());
-					} else {
-						
-					}
-					
-				} catch (Exception c) {
-					c.printStackTrace();
-				}
-				
-				courseList.put(coursePeriod, courseName);
-				System.out.println(courseList);
+				Course course = new Course(Integer.parseInt(periodTextField.getText()), courseNameTextField.getText(), Integer.parseInt(percentageTextField.getText()));
+				periodTextField = null;
+				courseNameTextField = null;
+				percentageTextField = null;
 			}
+
 		});
 
 		GroupLayout groupLayout = new GroupLayout(this);
