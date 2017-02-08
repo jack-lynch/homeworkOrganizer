@@ -67,10 +67,7 @@ public class HomeworkOrganizer extends JFrame {
 		tabbedPane.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				mainMenuPanel.repaint();
-				assignmentsPanel.repaint();
-				schedulePanel.repaint();
-				addAssignmentPanel.repaint();
+				addAssignmentPanel.setDropdown();
 			}
 		});
 	}
