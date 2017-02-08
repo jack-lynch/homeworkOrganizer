@@ -4,6 +4,14 @@ public class Homework extends AtHomeAssignment {
 
 	boolean isStudy;
 	
+	/**
+	 * 
+	 * @param course
+	 * @param title
+	 * @param month
+	 * @param day
+	 * @param year
+	 */
 	public Homework(Course course, String title, int month, int day, int year){
 		setCourse(course);
 		setTitle(title);
@@ -12,6 +20,15 @@ public class Homework extends AtHomeAssignment {
 		isStudy = true;
 	}
 	
+	/**
+	 * 
+	 * @param course
+	 * @param title
+	 * @param month
+	 * @param day
+	 * @param year
+	 * @param priority
+	 */
 	public Homework(Course course, String title, int month, int day, int year, int priority){
 		setCourse(course);
 		setTitle(title);
