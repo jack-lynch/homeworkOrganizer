@@ -6,7 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -47,26 +49,31 @@ public class AddCoursePanel extends JPanel {
 		JButton btnAddCourse = new JButton("Add Course To Schedule");
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				coursePeriod = Integer.parseInt(periodTextField.getText());
-				courseName = courseNameTextField.getText();
-				coursePercentage = Integer.parseInt(percentageTextField.getText());
-				
-				Course course = new Course(coursePeriod, courseName, coursePercentage);
-				
-				HomeworkOrganizer.courseList.add(course);
-				
-				course.setPeriod(coursePeriod);
-				course.setName(courseName);
-				course.setGrade(coursePercentage);
-				
-				periodTextField.setText("");;
-				courseNameTextField.setText("");
-				percentageTextField.setText("");
-				
-				System.out.println("The period of this class is " + course.getPeriod() + ".\n" 
-				+ "The name of this course is " + course.getName() + ".\n" 
-				+ "The grade in this class is " + course.getGrade() + ".");
+				if (periodTextField.getText() == "" && courseNameTextField.getText() == ""
+						&& percentageTextField.getText() == "") {
+					coursePeriod = Integer.parseInt(periodTextField.getText());
+					courseName = courseNameTextField.getText();
+					coursePercentage = Integer.parseInt(percentageTextField.getText());
+
+					Course course = new Course(coursePeriod, courseName, coursePercentage);
+
+					HomeworkOrganizer.courseList.add(course);
+
+					periodTextField.setText("");;
+					courseNameTextField.setText("");
+					percentageTextField.setText("");
+
+					for (int i = 0; i < HomeworkOrganizer.courseList.size(); i++) {
+						System.out.println(HomeworkOrganizer.courseList.get(i).getPeriod());
+						System.out.println(HomeworkOrganizer.courseList.get(i).getName());
+						System.out.println(HomeworkOrganizer.courseList.get(i).getGrade());
+					}
+
+				} else {
+					JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+					JOptionPane.showMessageDialog(frame, "Please make sure all the fields are filled out!");
+				}
+
 			}
 
 		});
