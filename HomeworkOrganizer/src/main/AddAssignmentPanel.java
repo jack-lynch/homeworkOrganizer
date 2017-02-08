@@ -171,6 +171,7 @@ public class AddAssignmentPanel extends JPanel {
 	}
 	
 	public void setDropdown() {
+		classesDropdown.removeAllItems();
 		for(Course course: HomeworkOrganizer.courseList){
 			classesDropdown.addItem(course);
 		}

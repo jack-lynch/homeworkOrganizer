@@ -27,7 +27,7 @@ public class MainPanel extends JPanel {
 			courseLabel.setText(course.toString());
 			assignmentsPanel.add(courseLabel);
 		}
-
+		
 	}
 
 }
