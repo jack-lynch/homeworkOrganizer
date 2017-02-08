@@ -49,8 +49,8 @@ public class AddCoursePanel extends JPanel {
 		JButton btnAddCourse = new JButton("Add Course To Schedule");
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (periodTextField.getText() == "" && courseNameTextField.getText() == ""
-						&& percentageTextField.getText() == "") {
+				if (!periodTextField.getText().equals("") && !courseNameTextField.getText().equals("")
+						&& !percentageTextField.getText().equals("")) {
 					coursePeriod = Integer.parseInt(periodTextField.getText());
 					courseName = courseNameTextField.getText();
 					coursePercentage = Integer.parseInt(percentageTextField.getText());
