@@ -2,17 +2,24 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class HomeworkOrganizer extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
+	public static ArrayList<Course> courseList = new ArrayList<Course>();
+	public static ArrayList<Assignment> assignments = new ArrayList<Assignment>();
 
 	/**
 	 * Launch the application.
@@ -41,14 +48,9 @@ public class HomeworkOrganizer extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		
-		// Creates the hash map for corresponding period numbers and course names
-
-		
-		
-		
 		// Creates the tabbed panel
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
 		MainPanel mainMenuPanel = new MainPanel();
@@ -57,8 +59,17 @@ public class HomeworkOrganizer extends JFrame {
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
 		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
 		
-		SchedulePanel schedulePanel = new SchedulePanel();
+		AddCoursePanel schedulePanel = new AddCoursePanel();
 		tabbedPane.addTab("Add Course", null, schedulePanel, null);
+		
+		AddAssignmentPanel addAssignmentPanel = new AddAssignmentPanel();
+		tabbedPane.addTab("Add Assignment", null, addAssignmentPanel, null);
+		tabbedPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				addAssignmentPanel.refreshDropdown();
+			}
+		});
 	}
 
 }

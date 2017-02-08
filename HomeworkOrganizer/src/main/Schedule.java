@@ -1,9 +1,8 @@
 package main;
 
-import java.util.HashMap;
 
-public class Schedule {
-	
+public class Schedule extends AddCoursePanel {
+
 	
 
 }
