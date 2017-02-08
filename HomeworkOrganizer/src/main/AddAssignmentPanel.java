@@ -38,17 +38,22 @@ public class AddAssignmentPanel extends JPanel {
 		add(txtPriority);
 		txtPriority.setColumns(10);
 		
+
+		JComboBox<String> monthDropdown = new JComboBox<String>();
+		monthDropdown.setModel(new DefaultComboBoxModel<String>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		//txtMonthDue = new JTextField();
+		//txtMonthDue.setText("Month Due");
+		add(monthDropdown);
+		//txtMonthDue.setColumns(10);
 		
+		JComboBox<Integer> dayDropdown = new JComboBox<Integer>();
+		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
 		
-		txtDayDue = new JTextField();
-		txtDayDue.setText("Day Due");
-		add(txtDayDue);
-		txtDayDue.setColumns(10);
+		//txtDayDue = new JTextField();
+		//txtDayDue.setText("Day Due");
+		add(dayDropdown);
+		//txtDayDue.setColumns(10);
 		
-		txtMonthDue = new JTextField();
-		txtMonthDue.setText("Month Due");
-		add(txtMonthDue);
-		txtMonthDue.setColumns(10);
 		
 		txtYearDue = new JTextField();
 		txtYearDue.setText("Year Due");
@@ -64,7 +69,7 @@ public class AddAssignmentPanel extends JPanel {
 						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								Integer.parseInt(txtMonthDue.getText()), 
-								Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
 								Integer.parseInt(txtYearDue.getText()));
 						HomeworkOrganizer.assignments.add(newHomework);
 						break;
