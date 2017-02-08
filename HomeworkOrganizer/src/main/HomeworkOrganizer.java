@@ -16,7 +16,6 @@ public class HomeworkOrganizer extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
 
 	/**
 	 * Launch the application.
@@ -45,9 +44,6 @@ public class HomeworkOrganizer extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		
-		// Creates the hash map for corresponding period numbers and course names
-
 		
 		
 		
