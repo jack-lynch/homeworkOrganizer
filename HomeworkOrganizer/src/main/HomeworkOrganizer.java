@@ -48,9 +48,6 @@ public class HomeworkOrganizer extends JFrame {
 		setContentPane(contentPane);
 		
 		
-		// Creates the hash map for corresponding period numbers and course names
-
-		
 		
 		
 		// Creates the tabbed panel
@@ -63,7 +60,7 @@ public class HomeworkOrganizer extends JFrame {
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
 		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
 		
-		SchedulePanel schedulePanel = new SchedulePanel();
+		AddCoursePanel schedulePanel = new AddCoursePanel();
 		tabbedPane.addTab("Add Course", null, schedulePanel, null);
 	}
 

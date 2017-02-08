@@ -60,18 +60,36 @@ public class AddAssignmentPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				switch(typeDropdown.getSelectedIndex()){
 					case 0:
-						Homework newAssignment = new Homework((Course) classesDropdown.getSelectedItem(), 
+						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								Integer.parseInt(txtMonthDue.getText()), 
 								Integer.parseInt(txtDayDue.getText()), 
 								Integer.parseInt(txtYearDue.getText()));
+						HomeworkOrganizer.assignments.add(newHomework);
 						break;
 					case 1:
-						Test newAssignment = new Test((Course) classesDropdown.getSelectedItem(), 
+						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								Integer.parseInt(txtMonthDue.getText()), 
 								Integer.parseInt(txtDayDue.getText()), 
 								Integer.parseInt(txtYearDue.getText()));
+						HomeworkOrganizer.assignments.add(newTest);
+						break;
+					case 2:
+						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 
+								txtAssignmentLabel.getText(), 
+								Integer.parseInt(txtMonthDue.getText()), 
+								Integer.parseInt(txtDayDue.getText()), 
+								Integer.parseInt(txtYearDue.getText()));
+						HomeworkOrganizer.assignments.add(newTest);
+						break;
+					case 3:
+						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
+								txtAssignmentLabel.getText(), 
+								Integer.parseInt(txtMonthDue.getText()), 
+								Integer.parseInt(txtDayDue.getText()), 
+								Integer.parseInt(txtYearDue.getText()));
+						HomeworkOrganizer.assignments.add(newTest);
 						break;
 					
 					
