@@ -16,6 +16,7 @@ public class AddAssignmentPanel extends JPanel {
 	private JTextField txtDayDue;
 	private JTextField txtMonthDue;
 	private JTextField txtYearDue;
+	private JComboBox<Course> classesDropdown = new JComboBox<Course>();
 	public AddAssignmentPanel() {
 		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -25,12 +26,12 @@ public class AddAssignmentPanel extends JPanel {
 		add(txtAssignmentLabel);
 		txtAssignmentLabel.setColumns(10);
 		
-		JComboBox<Course> classesDropdown = new JComboBox<Course>();
+		
 		JComboBox<String> typeDropdown = new JComboBox<String>();
-		typeDropdown.setModel(new DefaultComboBoxModel(new String[] {"Homework", "Test", "Study", "Classwork"}));
+		typeDropdown.setModel(new DefaultComboBoxModel<String>(new String[] {"Homework", "Test", "Study", "Classwork"}));
 		
 		add(classesDropdown);
-	//	for(int i = 0; i < )
+		refreshDropdown();
 		
 		txtPriority = new JTextField();
 		txtPriority.setText("Priority");
@@ -97,6 +98,11 @@ public class AddAssignmentPanel extends JPanel {
 			}
 		});
 		add(btnAddAssignment);
+	}
+	public void refreshDropdown() {
+		for(Course course: HomeworkOrganizer.courseList){
+			classesDropdown.addItem(course);
+		}
 	}
 
 }
