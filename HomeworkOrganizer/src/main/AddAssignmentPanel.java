@@ -31,7 +31,7 @@ public class AddAssignmentPanel extends JPanel {
 		typeDropdown.setModel(new DefaultComboBoxModel<String>(new String[] {"Homework", "Test", "Study", "Classwork"}));
 		
 		add(classesDropdown);
-		refreshDropdown();
+		setDropdown();
 		
 		txtPriority = new JTextField();
 		txtPriority.setText("Priority");
@@ -106,7 +106,7 @@ public class AddAssignmentPanel extends JPanel {
 		});
 		add(btnAddAssignment);
 	}
-	public void refreshDropdown() {
+	public void setDropdown() {
 		for(Course course: HomeworkOrganizer.courseList){
 			classesDropdown.addItem(course);
 		}
