@@ -100,14 +100,13 @@ public class AddAssignmentPanel extends JPanel {
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
 					
-					
 				}
+				
 			}
 		});
 		add(btnAddAssignment);
 	}
 	public void setDropdown() {
-		classesDropdown.removeAllItems();
 		for(Course course: HomeworkOrganizer.courseList){
 			classesDropdown.addItem(course);
 		}
