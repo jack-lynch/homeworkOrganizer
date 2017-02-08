@@ -70,6 +70,10 @@ public class HomeworkOrganizer extends JFrame {
 				addAssignmentPanel.setDropdown();
 			}
 		});
+		
+		AssignmentCalendar calendarPanel = new AssignmentCalendar();
+		tabbedPane.addTab("Calendar", null, calendarPanel, null);
+		calendarPanel.setCalendar(assignments);
 	}
 
 }

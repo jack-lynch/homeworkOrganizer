@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import main.AssignmentCalendar;
+
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 
@@ -40,7 +43,7 @@ public class CalendarTest extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		Calendar cal = new Calendar();
+		AssignmentCalendar cal = new AssignmentCalendar();
 		contentPane.add(cal, BorderLayout.CENTER);
 	}
 
