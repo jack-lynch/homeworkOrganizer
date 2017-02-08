@@ -61,7 +61,7 @@ public class HomeworkOrganizer extends JFrame {
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
 		tabbedPane.addTab("Assignments", null, assignmentsPanel, null);
 		
-		SchedulePanel schedulePanel = new SchedulePanel();
+		AddCoursePanel schedulePanel = new AddCoursePanel();
 		tabbedPane.addTab("Add Course", null, schedulePanel, null);
 	}
 

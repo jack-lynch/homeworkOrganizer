@@ -1,7 +1,7 @@
 package main;
 
 
-public class Schedule extends SchedulePanel {
+public class Schedule extends AddCoursePanel {
 
 
 	public Schedule() {

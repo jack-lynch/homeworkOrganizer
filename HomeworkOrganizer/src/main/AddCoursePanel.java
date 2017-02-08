@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class SchedulePanel extends JPanel {
+public class AddCoursePanel extends JPanel {
 	/**
 	 * 
 	 */
@@ -25,7 +25,7 @@ public class SchedulePanel extends JPanel {
 	protected String courseName;
 	protected double coursePercentage;
 
-	public SchedulePanel() {
+	public AddCoursePanel() {
 
 		JLabel lblPeriod = new JLabel("Period");
 
@@ -49,10 +49,21 @@ public class SchedulePanel extends JPanel {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Course course = new Course(Integer.parseInt(periodTextField.getText()), courseNameTextField.getText(), Integer.parseInt(percentageTextField.getText()));
-				periodTextField = null;
-				courseNameTextField = null;
-				percentageTextField = null;
+				coursePeriod = Integer.parseInt(periodTextField.getText());
+				courseName = courseNameTextField.getText();
+				coursePercentage = Integer.parseInt(percentageTextField.getText());
+				
+				Course course = new Course(coursePeriod, courseName, coursePercentage);
+				
+				course.setPeriod(coursePeriod);
+				course.setName(courseName);
+				course.setGrade(coursePercentage);
+				
+				periodTextField.setText("");;
+				courseNameTextField.setText("");
+				percentageTextField.setText("");
+				
+				System.out.println("The period of this class is " + course.getPeriod() + ".\n" + "The name of this course is " + course.getName() + ".\n" + "The grade in this class is " + course.getGrade() + ".");
 			}
 
 		});
