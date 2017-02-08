@@ -68,6 +68,7 @@ public class HomeworkOrganizer extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				addAssignmentPanel.setDropdown();
+				mainMenuPanel.refreshData();
 			}
 		});
 	}
