@@ -1,14 +1,16 @@
 package main;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class SchedulePanel extends JPanel {
 	/**
@@ -23,6 +25,7 @@ public class SchedulePanel extends JPanel {
 	protected String courseName;
 	protected double coursePercentage;
 
+	protected HashMap<Integer, String> courseList = new HashMap<Integer, String>();
 
 	public SchedulePanel() {
 
@@ -85,6 +88,9 @@ public class SchedulePanel extends JPanel {
 				} catch (Exception c) {
 					c.printStackTrace();
 				}
+				
+				courseList.put(coursePeriod, courseName);
+				System.out.println(courseList);
 			}
 		});
 
