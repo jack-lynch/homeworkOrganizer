@@ -3,7 +3,6 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -46,9 +45,6 @@ public class HomeworkOrganizer extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
-		
-		
 		
 		// Creates the tabbed panel
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
