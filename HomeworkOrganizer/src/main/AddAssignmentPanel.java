@@ -67,7 +67,7 @@ public class AddAssignmentPanel extends JPanel {
 								Integer.parseInt(txtYearDue.getText()));
 						break;
 					case 1:
-						Test newAssignment = new Test((Course) classesDropdown.getSelectedItem(), 
+						Test newAssignment2 = new Test((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								Integer.parseInt(txtMonthDue.getText()), 
 								Integer.parseInt(txtDayDue.getText()), 
