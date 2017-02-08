@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class HomeworkOrganizer extends JFrame {
 
@@ -48,6 +50,7 @@ public class HomeworkOrganizer extends JFrame {
 		
 		// Creates the tabbed panel
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
 		MainPanel mainMenuPanel = new MainPanel();
@@ -61,6 +64,12 @@ public class HomeworkOrganizer extends JFrame {
 		
 		AddAssignmentPanel addAssignmentPanel = new AddAssignmentPanel();
 		tabbedPane.addTab("Add Assignment", null, addAssignmentPanel, null);
+		tabbedPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				addAssignmentPanel.refreshDropdown();
+			}
+		});
 	}
 
 }

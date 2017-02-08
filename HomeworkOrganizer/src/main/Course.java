@@ -2,6 +2,8 @@ package main;
 
 public class Course {
 
+
+
 	private int period; 
 	private String name;
 	private double grade;
@@ -59,6 +61,12 @@ public class Course {
 	public void setGrade(double grade) {
 		this.grade = grade;
 	}
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return  name + " - " + period + " - " + grade + "%";
+	}
 	
 }
