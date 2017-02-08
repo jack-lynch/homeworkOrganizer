@@ -22,7 +22,7 @@ public class Classwork extends AtSchoolAssignment {
 	
 	@Override
 	boolean isSchoolWork() {
-		return true;
+		return isClasswork;
 	}
 
 	@Override
