@@ -5,8 +5,8 @@ public class Study extends AtHomeAssignment {
 	boolean isStudy;
 	int duration;
 	
-	public Study(String course, String title, int month, int day, int year, int duration){
-		setCourseName(course);
+	public Study(Course course, String title, int month, int day, int year, int duration){
+		setCourse(course);
 		setTitle(title);
 		setDueDate(month, day, year);
 		setPriority(1);
@@ -14,8 +14,8 @@ public class Study extends AtHomeAssignment {
 		isStudy = true;
 	}
 	
-	public Study(String course, String title, int month, int day, int year, int duration, int priority){
-		setCourseName(course);
+	public Study(Course course, String title, int month, int day, int year, int duration, int priority){
+		setCourse(course);
 		setTitle(title);
 		setDueDate(month, day, year);
 		setPriority(priority);
