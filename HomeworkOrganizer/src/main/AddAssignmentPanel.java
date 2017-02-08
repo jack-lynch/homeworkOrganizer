@@ -22,7 +22,7 @@ public class AddAssignmentPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		txtAssignmentLabel = new JTextField();
-		txtAssignmentLabel.setToolTipText("Assignment Name");
+		txtAssignmentLabel.setText("Assignment Name");
 		add(txtAssignmentLabel);
 		txtAssignmentLabel.setColumns(10);
 		
@@ -34,18 +34,18 @@ public class AddAssignmentPanel extends JPanel {
 		setDropdown();
 		
 		txtPriority = new JTextField();
-		txtPriority.setToolTipText("Priority");
+		txtPriority.setText("Priority");
 		add(txtPriority);
 		txtPriority.setColumns(10);
 		
-
+		String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 		JComboBox<String> monthDropdown = new JComboBox<String>();
-		monthDropdown.setModel(new DefaultComboBoxModel<String>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthDropdown.setModel(new DefaultComboBoxModel<String>(months));
 		//txtMonthDue = new JTextField();
 		//txtMonthDue.setText("Month Due");
 		add(monthDropdown);
 		//txtMonthDue.setColumns(10);
-		
+				
 		JComboBox<Integer> dayDropdown = new JComboBox<Integer>();
 		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
 		
@@ -55,10 +55,12 @@ public class AddAssignmentPanel extends JPanel {
 		//txtDayDue.setColumns(10);
 		
 		
-		txtYearDue = new JTextField();
-		txtYearDue.setToolTipText("Year Due");
-		add(txtYearDue);
-		txtYearDue.setColumns(10);
+		JComboBox<Integer> yearDropdown = new JComboBox<Integer>();
+		yearDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {2017, 2018}));
+		//txtYearDue = new JTextField();
+		//txtYearDue.setText("Year Due");
+		add(yearDropdown);
+		//txtYearDue.setColumns(10);
 		
 		
 		JButton btnAddAssignment = new JButton("Add Assignment");
@@ -68,33 +70,33 @@ public class AddAssignmentPanel extends JPanel {
 					case 0:
 						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
-								Integer.parseInt(txtMonthDue.getText()), 
+								monthDropdown.getSelectedIndex(), 
 								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
-								Integer.parseInt(txtYearDue.getText()));
+								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newHomework);
 						break;
 					case 1:
 						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
-								Integer.parseInt(txtMonthDue.getText()), 
-								Integer.parseInt(txtDayDue.getText()), 
-								Integer.parseInt(txtYearDue.getText()));
+								monthDropdown.getSelectedIndex(), 
+								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newTest);
 						break;
 					case 2:
 						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
-								Integer.parseInt(txtMonthDue.getText()), 
-								Integer.parseInt(txtDayDue.getText()), 
-								Integer.parseInt(txtYearDue.getText()));
+								monthDropdown.getSelectedIndex(), 
+								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newStudy);
 						break;
 					case 3:
 						Classwork newClassWork = new Classwork((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
-								Integer.parseInt(txtMonthDue.getText()), 
-								Integer.parseInt(txtDayDue.getText()), 
-								Integer.parseInt(txtYearDue.getText()));
+								monthDropdown.getSelectedIndex(), 
+								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
 					
