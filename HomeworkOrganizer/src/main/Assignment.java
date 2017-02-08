@@ -5,11 +5,37 @@ import java.util.Date;
 
 public abstract class Assignment implements DueDate{
 
-	protected double classGrade;
 	protected int priority = -1;
-	protected String courseName;
+	protected Course course;
+	/**
+	 * @return the course
+	 */
+	public Course getCourse() {
+		return course;
+	}
+
+	/**
+	 * @param course the course to set
+	 */
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	/**
+	 * @return the dueDate
+	 */
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	/**
+	 * @param dueDate the dueDate to set
+	 */
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
+
 	protected String title;
-	protected int classPeriod;
 	
 	Date dueDate = new Date();
 	
@@ -26,14 +52,14 @@ public abstract class Assignment implements DueDate{
 	}
 
 	public String toString(){
-		return courseName + " " + title + ", due " + dueDate;
+		return course.getName() + " " + title + ", due " + dueDate;
 	}
 	
 	protected double getClassGrade() {
-		return classGrade;
+		return course.getGrade();
 	}
 	protected void setClassGrade(double classGrade) {
-		this.classGrade = classGrade;
+		course.setGrade(classGrade);
 	}
 
 	
@@ -47,20 +73,20 @@ public abstract class Assignment implements DueDate{
 
 	
 	protected String getCourseName() {
-		return courseName;
+		return course.getName();
 	}
 
 	protected void setCourseName(String courseName) {
-		this.courseName = courseName;
+		course.setName(courseName);
 	}
 
 	
 	protected int getClassPeriod() {
-		return classPeriod;
+		return course.getPeriod();
 	}
 
 	protected void setClassPeriod(int classPeriod) {
-		this.classPeriod = classPeriod;
+		course.setPeriod(classPeriod);
 	}
 
 	

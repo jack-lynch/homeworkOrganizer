@@ -4,16 +4,16 @@ public class Homework extends AtHomeAssignment {
 
 	boolean isStudy;
 	
-	public Homework(String course, String title, int month, int day, int year){
-		setCourseName(course);
+	public Homework(Course course, String title, int month, int day, int year){
+		setCourse(course);
 		setTitle(title);
 		setDueDate(month, day, year);
 		setPriority(1);
 		isStudy = true;
 	}
 	
-	public Homework(String course, String title, int month, int day, int year, int priority){
-		setCourseName(course);
+	public Homework(Course course, String title, int month, int day, int year, int priority){
+		setCourse(course);
 		setTitle(title);
 		setDueDate(month, day, year);
 		setPriority(priority);
