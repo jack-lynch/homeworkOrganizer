@@ -5,6 +5,15 @@ public class Study extends AtHomeAssignment {
 	boolean isStudy;
 	int duration;
 	
+	public Study(Course course, String title, int month, int day, int year){
+		setCourse(course);
+		setTitle(title);
+		setDueDate(month, day, year);
+		setPriority(1);
+		duration = 5;
+		isStudy = true;
+	}
+	
 	public Study(Course course, String title, int month, int day, int year, int duration){
 		setCourse(course);
 		setTitle(title);

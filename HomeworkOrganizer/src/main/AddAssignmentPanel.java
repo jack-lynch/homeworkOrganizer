@@ -81,15 +81,15 @@ public class AddAssignmentPanel extends JPanel {
 								Integer.parseInt(txtMonthDue.getText()), 
 								Integer.parseInt(txtDayDue.getText()), 
 								Integer.parseInt(txtYearDue.getText()));
-						HomeworkOrganizer.assignments.add(newTest);
+						HomeworkOrganizer.assignments.add(newStudy);
 						break;
 					case 3:
-						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
+						Classwork newClassWork = new Classwork((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								Integer.parseInt(txtMonthDue.getText()), 
 								Integer.parseInt(txtDayDue.getText()), 
 								Integer.parseInt(txtYearDue.getText()));
-						HomeworkOrganizer.assignments.add(newTest);
+						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
 					
 					
