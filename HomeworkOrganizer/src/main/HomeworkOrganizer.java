@@ -2,6 +2,7 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
@@ -16,6 +17,8 @@ public class HomeworkOrganizer extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	public static ArrayList<Course> courseList = new ArrayList<Course>();
+	public static ArrayList<Assignment> assignments = new ArrayList<Assignment>();
 
 	/**
 	 * Launch the application.
