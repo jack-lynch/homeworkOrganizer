@@ -22,7 +22,7 @@ public class Test extends AtSchoolAssignment {
 	}
 	
 	public String toString(){
-		return course.getName() + " - " + title + ", due " + dueDate + ", TEST";
+		return course.getName() + " - " + title + ", due " + dayofDue + ", TEST";
 	}
 	
 	

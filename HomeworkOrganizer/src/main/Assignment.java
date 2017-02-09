@@ -3,11 +3,14 @@ package main;
 import java.text.ParseException;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.DuplicateFormatFlagsException;
 
 public abstract class Assignment implements DueDate, Comparator<Assignment>, Comparable<Assignment>{
 
 	protected int priority = -1;
 	protected Course course;
+	
+	protected int dayofDue;
 	/**
 	 * @return the course
 	 */
@@ -43,7 +46,7 @@ public abstract class Assignment implements DueDate, Comparator<Assignment>, Com
 	
 	public void setDueDate(int month, int day, int year){
 		checkDate(month, day, year);
-		
+		dayofDue = day;
 		try {
 			dueDate = dateFormat.parse(month + "/" + day + "/" + year);
 		} catch (ParseException e) {
@@ -96,7 +99,7 @@ public abstract class Assignment implements DueDate, Comparator<Assignment>, Com
 			
 		}
 		
-		return title + " - " + course.getName() + ", due " + month + " " + dueDate.getDay() + ", 2017";
+		return title + " - " + course.getName() + ", due " + month + " " + dayofDue + ", 2017";
 	}
 	
 	protected double getClassGrade() {
