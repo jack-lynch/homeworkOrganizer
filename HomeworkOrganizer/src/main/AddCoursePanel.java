@@ -69,6 +69,9 @@ public class AddCoursePanel extends JPanel {
 						System.out.println(HomeworkOrganizer.courseList.get(i).getGrade());
 					}
 
+					JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+					JOptionPane.showMessageDialog(frame, courseName + " has been added to your schedule!");
+					
 				} else {
 					JFrame frame = new JFrame("JOptionPane showMessageDialog example");
 					JOptionPane.showMessageDialog(frame, "Please make sure all the fields are filled out!");

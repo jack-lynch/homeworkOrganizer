@@ -2,8 +2,6 @@ package main;
 
 public class Course {
 
-
-
 	private int period; 
 	private String name;
 	private double grade;
