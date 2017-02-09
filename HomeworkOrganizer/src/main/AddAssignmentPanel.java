@@ -6,6 +6,7 @@ import javax.swing.JComboBox;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Collections;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.FlowLayout;
@@ -94,8 +95,8 @@ public class AddAssignmentPanel extends JPanel {
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
 					
-					
 				}
+				Collections.sort(HomeworkOrganizer.assignments);
 			}
 		});
 		
