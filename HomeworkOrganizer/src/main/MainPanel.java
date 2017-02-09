@@ -19,7 +19,6 @@ public class MainPanel extends JPanel {
 		
 		
 		refreshData();
-		
 	}
 
 	public void refreshData() {

@@ -95,6 +95,8 @@ public class AddAssignmentPanel extends JPanel {
 					
 				}
 				
+				System.out.println(Classwork.class);
+
 			}
 		});
 		
