@@ -15,6 +15,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 import javax.swing.border.LineBorder;
@@ -516,12 +517,7 @@ public class AssignmentCalendar extends JPanel {
 		
 		
 		for(int i = 0; i < dates.length; i++){
-			for(int k = 0; k < HomeworkOrganizer.assignments.size(); k++){
-				Assignment a = HomeworkOrganizer.assignments.get(k);
-				if(a.getDueDate().getDay() == numbers[i]){
-					assignmentLbls[i].setText(a.title);
-				}
-			}
+		
 			String day = Integer.toString(numbers[i]);
 			dates[i].setText(day);
 			
@@ -533,6 +529,23 @@ public class AssignmentCalendar extends JPanel {
 
 	public void setCalendar(){
 		
+		Integer[] numbers = {29, 30 , 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 1, 2, 3, 4};
+		
+		ArrayList<Integer> ints = new ArrayList<Integer>(Arrays.asList(numbers));
+		Calendar cal = Calendar.getInstance();
+		int firstDay = cal.DAY_OF_WEEK;
+		int date = cal.DAY_OF_MONTH;
+		
+		JLabel[] dates = {date1, date2, date3, date4, date5, date6, date7, date8, date9, date10,
+				date11, date12, date13, date14, date15, date16, date17, date18, date19, date20,
+				date21, date22, date23, date24, date25, date26, date27, date28, date29, date30,
+				date31, date32, date33, date34, date35};
+		
+		JLabel[] assignmentLbls = {ass1, ass2, ass3, ass4, ass5, ass6, ass7, ass8, ass9, ass10,
+				ass11, ass12, ass13, ass14, ass15, ass16, ass17, ass18, ass19, ass20,
+				ass21, ass22, ass23, ass24, ass25, ass26, ass27, ass28, ass29, ass30,
+				ass31, ass32, ass33, ass34, ass35};
+		
 		JPanel[] panels = {panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10,
 				panel11, panel12, panel13, panel14, panel15,panel16, panel17, panel18, panel19, panel20,
 				panel21, panel22, panel23, panel24, panel25,panel26, panel27, panel28, panel29, panel30,
@@ -540,17 +553,29 @@ public class AssignmentCalendar extends JPanel {
 		
 		JLabel[] lbl = {ass1, ass2, ass3, ass4, ass5, ass6, ass7, ass8, ass9, ass10};
 		
-		for(int z = 0; z < HomeworkOrganizer.assignments.size(); z++){
+		for(int z = 0; z < panels.length; z++){
 			
-			Assignment assignment = HomeworkOrganizer.assignments.get(z);
-			panels[z].add(lbl[z], BorderLayout.WEST);
-			lbl[z].setText(assignment.title);
+			panels[z].add(assignmentLbls[z], BorderLayout.WEST);
 			
+			
+		}
+		
+		for(int i = 0; i < numbers.length; i++){
+			String day = Integer.toString(numbers[i]);
+			dates[i].setText(day);
+			
+		}
+		
+		for(int i = 0; i < HomeworkOrganizer.assignments.size(); i++){
+			Assignment a = HomeworkOrganizer.assignments.get(i);
+			int index = ints.indexOf(a.dayofDue);
+			assignmentLbls[index].setText(a.getTitle());
 		}
 	}
 	
+	
 	public void refreshDate(){
-		
+		setCalendar();
 	}
 	
 }
