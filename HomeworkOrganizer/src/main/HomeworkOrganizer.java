@@ -68,8 +68,13 @@ public class HomeworkOrganizer extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				addAssignmentPanel.setDropdown();
+				mainMenuPanel.refreshData();
 			}
 		});
+		
+		AssignmentCalendar calendarPanel = new AssignmentCalendar();
+		tabbedPane.addTab("Calendar", null, calendarPanel, null);
+		calendarPanel.setCalendar(assignments);
 	}
 
 }

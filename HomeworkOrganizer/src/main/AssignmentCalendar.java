@@ -1,4 +1,4 @@
-package Tester;
+package main;
 
 import javax.swing.JPanel;
 import com.jgoodies.forms.layout.FormLayout;
@@ -14,16 +14,103 @@ import net.miginfocom.swing.MigLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
-public class Calendar extends JPanel {
-	private JPanel panel32;
+public class AssignmentCalendar extends JPanel {
+	
+	JLabel date1 = new JLabel();
+	JLabel date2 = new JLabel();
+	JLabel date3 = new JLabel();
+	JLabel date4 = new JLabel();
+	JLabel date5 = new JLabel();
+	JLabel date6 = new JLabel();
+	JLabel date7 = new JLabel();
+	JLabel date8 = new JLabel();
+	JLabel date9 = new JLabel();
+	JLabel date10 = new JLabel();
+	JLabel date11 = new JLabel();
+	JLabel date12 = new JLabel();
+	JLabel date13 = new JLabel();
+	JLabel date14 = new JLabel();
+	JLabel date15 = new JLabel();
+	JLabel date16 = new JLabel();
+	JLabel date17 = new JLabel();
+	JLabel date18 = new JLabel();
+	JLabel date19 = new JLabel();
+	JLabel date20 = new JLabel();
+	JLabel date21 = new JLabel();
+	JLabel date22 = new JLabel();
+	JLabel date23 = new JLabel();
+	JLabel date24 = new JLabel();
+	JLabel date25 = new JLabel();
+	JLabel date26 = new JLabel();
+	JLabel date27 = new JLabel();
+	JLabel date28 = new JLabel();
+	JLabel date29 = new JLabel();
+	JLabel date30 = new JLabel();
+	JLabel date31 = new JLabel();
+	JLabel date32 = new JLabel();
+	JLabel date33 = new JLabel();
+	JLabel date34 = new JLabel();
+	JLabel date35 = new JLabel();
+	
+	
+	JPanel panel1 = new JPanel();
+	JPanel panel2 = new JPanel();
+	JPanel panel3 = new JPanel();
+	JPanel panel4 = new JPanel();
+	JPanel panel5 = new JPanel();
+	JPanel panel6 = new JPanel();
+	JPanel panel7 = new JPanel();
+	JPanel panel8 = new JPanel();
+	JPanel panel9 = new JPanel();
+	JPanel panel10 = new JPanel();
+	JPanel panel11 = new JPanel();
+	JPanel panel12 = new JPanel();
+	JPanel panel13 = new JPanel();
+	JPanel panel14 = new JPanel();
+	JPanel panel15 = new JPanel();
+	JPanel panel16 = new JPanel();
+	JPanel panel17 = new JPanel();
+	JPanel panel18 = new JPanel();
+	JPanel panel19 = new JPanel();
+	JPanel panel20 = new JPanel();
+	JPanel panel21 = new JPanel();
+	JPanel panel22 = new JPanel();
+	JPanel panel23 = new JPanel();
+	JPanel panel24 = new JPanel();
+	JPanel panel25 = new JPanel();
+	JPanel panel26 = new JPanel();
+	JPanel panel27 = new JPanel();
+	JPanel panel28 = new JPanel();
+	JPanel panel29 = new JPanel();
+	JPanel panel30 = new JPanel();
+	JPanel panel31 = new JPanel();
+	JPanel panel32 = new JPanel();
+	JPanel panel33 = new JPanel();
+	JPanel panel34 = new JPanel();
+	JPanel panel35 = new JPanel();
+	
+	JLabel ass1 = new JLabel();
+	JLabel ass2 = new JLabel();
+	JLabel ass3 = new JLabel();
+	JLabel ass4 = new JLabel();
+	JLabel ass5 = new JLabel();
+	JLabel ass6 = new JLabel();
+	JLabel ass7 = new JLabel();
+	JLabel ass8 = new JLabel();
+	JLabel ass9 = new JLabel();
+	JLabel ass10 = new JLabel();
 
+	
 	/**
 	 * Create the panel.
 	 */
-	public Calendar() {
+	public AssignmentCalendar() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{1, 1, 1, 1, 1, 1, 1};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
@@ -31,56 +118,62 @@ public class Calendar extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
+		JLabel lblS = new JLabel("S");
+		GridBagConstraints gbc_lblS = new GridBagConstraints();
+		gbc_lblS.insets = new Insets(0, 0, 5, 5);
+		gbc_lblS.gridx = 0;
+		gbc_lblS.gridy = 0;
+		add(lblS, gbc_lblS);
+		
 		JLabel lblM = new JLabel("M");
 		GridBagConstraints gbc_lblM = new GridBagConstraints();
 		gbc_lblM.insets = new Insets(0, 0, 5, 5);
-		gbc_lblM.gridx = 0;
+		gbc_lblM.gridx = 1;
 		gbc_lblM.gridy = 0;
 		add(lblM, gbc_lblM);
 		
 		JLabel lblT = new JLabel("T");
 		GridBagConstraints gbc_lblT = new GridBagConstraints();
 		gbc_lblT.insets = new Insets(0, 0, 5, 5);
-		gbc_lblT.gridx = 1;
+		gbc_lblT.gridx = 2;
 		gbc_lblT.gridy = 0;
 		add(lblT, gbc_lblT);
 		
 		JLabel lblW = new JLabel("W");
 		GridBagConstraints gbc_lblW = new GridBagConstraints();
 		gbc_lblW.insets = new Insets(0, 0, 5, 5);
-		gbc_lblW.gridx = 2;
+		gbc_lblW.gridx = 3;
 		gbc_lblW.gridy = 0;
 		add(lblW, gbc_lblW);
 		
-		JLabel lblTh = new JLabel("Th");
-		GridBagConstraints gbc_lblTh = new GridBagConstraints();
-		gbc_lblTh.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTh.gridx = 3;
-		gbc_lblTh.gridy = 0;
-		add(lblTh, gbc_lblTh);
+		JLabel lblTH = new JLabel("TH");
+		GridBagConstraints gbc_lblTH = new GridBagConstraints();
+		gbc_lblTH.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTH.gridx = 4;
+		gbc_lblTH.gridy = 0;
+		add(lblTH, gbc_lblTH);
 		
 		JLabel lblF = new JLabel("F");
 		GridBagConstraints gbc_lblF = new GridBagConstraints();
 		gbc_lblF.insets = new Insets(0, 0, 5, 5);
-		gbc_lblF.gridx = 4;
+		gbc_lblF.gridx = 5;
 		gbc_lblF.gridy = 0;
 		add(lblF, gbc_lblF);
 		
-		JLabel lblS = new JLabel("S");
-		GridBagConstraints gbc_lblS = new GridBagConstraints();
-		gbc_lblS.insets = new Insets(0, 0, 5, 5);
-		gbc_lblS.gridx = 5;
-		gbc_lblS.gridy = 0;
-		add(lblS, gbc_lblS);
+		JLabel lblSA = new JLabel("S");
+		GridBagConstraints gbc_lblSA = new GridBagConstraints();
+		gbc_lblSA.insets = new Insets(0, 0, 5, 0);
+		gbc_lblSA.gridx = 6;
+		gbc_lblSA.gridy = 0;
+		add(lblSA, gbc_lblSA);
 		
-		JLabel lblSu = new JLabel("Su");
-		GridBagConstraints gbc_lblSu = new GridBagConstraints();
-		gbc_lblSu.insets = new Insets(0, 0, 5, 0);
-		gbc_lblSu.gridx = 6;
-		gbc_lblSu.gridy = 0;
-		add(lblSu, gbc_lblSu);
 		
-		JPanel panel1 = new JPanel();
+		
+		JPanel[] panels = {panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10,
+					panel11, panel12, panel13, panel14, panel15,panel16, panel17, panel18, panel19, panel20,
+					panel21, panel22, panel23, panel24, panel25,panel26, panel27, panel28, panel29, panel30,
+					panel31, panel32, panel33, panel34, panel35};
+		
 		panel1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel_23 = new GridBagConstraints();
 		gbc_panel_23.insets = new Insets(0, 0, 5, 5);
@@ -88,8 +181,9 @@ public class Calendar extends JPanel {
 		gbc_panel_23.gridx = 0;
 		gbc_panel_23.gridy = 1;
 		add(panel1, gbc_panel_23);
+		panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel2 = new JPanel();
+		
 		panel2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel_22 = new GridBagConstraints();
 		gbc_panel_22.insets = new Insets(0, 0, 5, 5);
@@ -98,7 +192,7 @@ public class Calendar extends JPanel {
 		gbc_panel_22.gridy = 1;
 		add(panel2, gbc_panel_22);
 		
-		JPanel panel3 = new JPanel();
+		
 		panel3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel_26 = new GridBagConstraints();
 		gbc_panel_26.insets = new Insets(0, 0, 5, 5);
@@ -107,7 +201,7 @@ public class Calendar extends JPanel {
 		gbc_panel_26.gridy = 1;
 		add(panel3, gbc_panel_26);
 		
-		JPanel panel4 = new JPanel();
+		
 		panel4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel4 = new GridBagConstraints();
 		gbc_panel4.insets = new Insets(0, 0, 5, 5);
@@ -116,7 +210,6 @@ public class Calendar extends JPanel {
 		gbc_panel4.gridy = 1;
 		add(panel4, gbc_panel4);
 		
-		JPanel panel5 = new JPanel();
 		panel5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel5 = new GridBagConstraints();
 		gbc_panel5.insets = new Insets(0, 0, 5, 5);
@@ -125,7 +218,6 @@ public class Calendar extends JPanel {
 		gbc_panel5.gridy = 1;
 		add(panel5, gbc_panel5);
 		
-		JPanel panel6 = new JPanel();
 		panel6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel6 = new GridBagConstraints();
 		gbc_panel6.insets = new Insets(0, 0, 5, 5);
@@ -134,7 +226,6 @@ public class Calendar extends JPanel {
 		gbc_panel6.gridy = 1;
 		add(panel6, gbc_panel6);
 		
-		JPanel panel7 = new JPanel();
 		panel7.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel7 = new GridBagConstraints();
 		gbc_panel7.insets = new Insets(0, 0, 5, 0);
@@ -143,7 +234,6 @@ public class Calendar extends JPanel {
 		gbc_panel7.gridy = 1;
 		add(panel7, gbc_panel7);
 		
-		JPanel panel8 = new JPanel();
 		panel8.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel8 = new GridBagConstraints();
 		gbc_panel8.insets = new Insets(0, 0, 5, 5);
@@ -152,7 +242,6 @@ public class Calendar extends JPanel {
 		gbc_panel8.gridy = 2;
 		add(panel8, gbc_panel8);
 		
-		JPanel panel9 = new JPanel();
 		panel9.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel9 = new GridBagConstraints();
 		gbc_panel9.insets = new Insets(0, 0, 5, 5);
@@ -161,7 +250,6 @@ public class Calendar extends JPanel {
 		gbc_panel9.gridy = 2;
 		add(panel9, gbc_panel9);
 		
-		JPanel panel10 = new JPanel();
 		panel10.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel10 = new GridBagConstraints();
 		gbc_panel10.insets = new Insets(0, 0, 5, 5);
@@ -170,7 +258,6 @@ public class Calendar extends JPanel {
 		gbc_panel10.gridy = 2;
 		add(panel10, gbc_panel10);
 		
-		JPanel panel11 = new JPanel();
 		panel11.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel11 = new GridBagConstraints();
 		gbc_panel11.insets = new Insets(0, 0, 5, 5);
@@ -179,7 +266,6 @@ public class Calendar extends JPanel {
 		gbc_panel11.gridy = 2;
 		add(panel11, gbc_panel11);
 		
-		JPanel panel12 = new JPanel();
 		panel12.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel12 = new GridBagConstraints();
 		gbc_panel12.insets = new Insets(0, 0, 5, 5);
@@ -188,7 +274,7 @@ public class Calendar extends JPanel {
 		gbc_panel12.gridy = 2;
 		add(panel12, gbc_panel12);
 		
-		JPanel panel13 = new JPanel();
+		
 		panel13.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel13 = new GridBagConstraints();
 		gbc_panel13.insets = new Insets(0, 0, 5, 5);
@@ -197,7 +283,7 @@ public class Calendar extends JPanel {
 		gbc_panel13.gridy = 2;
 		add(panel13, gbc_panel13);
 		
-		JPanel panel14 = new JPanel();
+
 		panel14.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel14 = new GridBagConstraints();
 		gbc_panel14.insets = new Insets(0, 0, 5, 0);
@@ -206,7 +292,6 @@ public class Calendar extends JPanel {
 		gbc_panel14.gridy = 2;
 		add(panel14, gbc_panel14);
 		
-		JPanel panel15 = new JPanel();
 		panel15.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel15 = new GridBagConstraints();
 		gbc_panel15.insets = new Insets(0, 0, 5, 5);
@@ -215,7 +300,6 @@ public class Calendar extends JPanel {
 		gbc_panel15.gridy = 3;
 		add(panel15, gbc_panel15);
 		
-		JPanel panel16 = new JPanel();
 		panel16.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel16 = new GridBagConstraints();
 		gbc_panel16.insets = new Insets(0, 0, 5, 5);
@@ -224,7 +308,6 @@ public class Calendar extends JPanel {
 		gbc_panel16.gridy = 3;
 		add(panel16, gbc_panel16);
 		
-		JPanel panel17 = new JPanel();
 		panel17.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel17 = new GridBagConstraints();
 		gbc_panel17.insets = new Insets(0, 0, 5, 5);
@@ -233,7 +316,6 @@ public class Calendar extends JPanel {
 		gbc_panel17.gridy = 3;
 		add(panel17, gbc_panel17);
 		
-		JPanel panel18 = new JPanel();
 		panel18.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel18 = new GridBagConstraints();
 		gbc_panel18.insets = new Insets(0, 0, 5, 5);
@@ -242,7 +324,6 @@ public class Calendar extends JPanel {
 		gbc_panel18.gridy = 3;
 		add(panel18, gbc_panel18);
 		
-		JPanel panel19 = new JPanel();
 		panel19.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel19 = new GridBagConstraints();
 		gbc_panel19.insets = new Insets(0, 0, 5, 5);
@@ -251,7 +332,6 @@ public class Calendar extends JPanel {
 		gbc_panel19.gridy = 3;
 		add(panel19, gbc_panel19);
 		
-		JPanel panel20 = new JPanel();
 		panel20.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel20 = new GridBagConstraints();
 		gbc_panel20.insets = new Insets(0, 0, 5, 5);
@@ -260,7 +340,6 @@ public class Calendar extends JPanel {
 		gbc_panel20.gridy = 3;
 		add(panel20, gbc_panel20);
 		
-		JPanel panel21 = new JPanel();
 		panel21.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel21 = new GridBagConstraints();
 		gbc_panel21.insets = new Insets(0, 0, 5, 0);
@@ -269,7 +348,6 @@ public class Calendar extends JPanel {
 		gbc_panel21.gridy = 3;
 		add(panel21, gbc_panel21);
 		
-		JPanel panel22 = new JPanel();
 		panel22.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel22 = new GridBagConstraints();
 		gbc_panel22.insets = new Insets(0, 0, 5, 5);
@@ -278,7 +356,6 @@ public class Calendar extends JPanel {
 		gbc_panel22.gridy = 4;
 		add(panel22, gbc_panel22);
 		
-		JPanel panel23 = new JPanel();
 		panel23.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel23 = new GridBagConstraints();
 		gbc_panel23.insets = new Insets(0, 0, 5, 5);
@@ -287,7 +364,6 @@ public class Calendar extends JPanel {
 		gbc_panel23.gridy = 4;
 		add(panel23, gbc_panel23);
 		
-		JPanel panel24 = new JPanel();
 		panel24.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel24 = new GridBagConstraints();
 		gbc_panel24.insets = new Insets(0, 0, 5, 5);
@@ -296,7 +372,6 @@ public class Calendar extends JPanel {
 		gbc_panel24.gridy = 4;
 		add(panel24, gbc_panel24);
 		
-		JPanel panel25 = new JPanel();
 		panel25.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel25 = new GridBagConstraints();
 		gbc_panel25.insets = new Insets(0, 0, 5, 5);
@@ -305,7 +380,6 @@ public class Calendar extends JPanel {
 		gbc_panel25.gridy = 4;
 		add(panel25, gbc_panel25);
 		
-		JPanel panel26 = new JPanel();
 		panel26.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel26 = new GridBagConstraints();
 		gbc_panel26.insets = new Insets(0, 0, 5, 5);
@@ -314,7 +388,6 @@ public class Calendar extends JPanel {
 		gbc_panel26.gridy = 4;
 		add(panel26, gbc_panel26);
 		
-		JPanel panel27 = new JPanel();
 		panel27.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel27 = new GridBagConstraints();
 		gbc_panel27.insets = new Insets(0, 0, 5, 5);
@@ -323,7 +396,6 @@ public class Calendar extends JPanel {
 		gbc_panel27.gridy = 4;
 		add(panel27, gbc_panel27);
 		
-		JPanel panel28 = new JPanel();
 		panel28.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel28 = new GridBagConstraints();
 		gbc_panel28.insets = new Insets(0, 0, 5, 0);
@@ -332,7 +404,6 @@ public class Calendar extends JPanel {
 		gbc_panel28.gridy = 4;
 		add(panel28, gbc_panel28);
 		
-		JPanel panel29 = new JPanel();
 		panel29.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel29 = new GridBagConstraints();
 		gbc_panel29.insets = new Insets(0, 0, 0, 5);
@@ -341,7 +412,6 @@ public class Calendar extends JPanel {
 		gbc_panel29.gridy = 5;
 		add(panel29, gbc_panel29);
 		
-		JPanel panel30 = new JPanel();
 		panel30.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel30 = new GridBagConstraints();
 		gbc_panel30.insets = new Insets(0, 0, 0, 5);
@@ -350,7 +420,6 @@ public class Calendar extends JPanel {
 		gbc_panel30.gridy = 5;
 		add(panel30, gbc_panel30);
 		
-		JPanel panel31 = new JPanel();
 		panel31.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel31 = new GridBagConstraints();
 		gbc_panel31.insets = new Insets(0, 0, 0, 5);
@@ -359,7 +428,6 @@ public class Calendar extends JPanel {
 		gbc_panel31.gridy = 5;
 		add(panel31, gbc_panel31);
 		
-		panel32 = new JPanel();
 		panel32.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel32 = new GridBagConstraints();
 		gbc_panel32.insets = new Insets(0, 0, 0, 5);
@@ -368,7 +436,6 @@ public class Calendar extends JPanel {
 		gbc_panel32.gridy = 5;
 		add(panel32, gbc_panel32);
 		
-		JPanel panel33 = new JPanel();
 		panel33.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel33 = new GridBagConstraints();
 		gbc_panel33.insets = new Insets(0, 0, 0, 5);
@@ -377,7 +444,6 @@ public class Calendar extends JPanel {
 		gbc_panel33.gridy = 5;
 		add(panel33, gbc_panel33);
 		
-		JPanel panel34 = new JPanel();
 		panel34.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel34 = new GridBagConstraints();
 		gbc_panel34.insets = new Insets(0, 0, 0, 5);
@@ -386,14 +452,60 @@ public class Calendar extends JPanel {
 		gbc_panel34.gridy = 5;
 		add(panel34, gbc_panel34);
 		
-		JPanel panel35 = new JPanel();
 		panel35.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagConstraints gbc_panel35 = new GridBagConstraints();
 		gbc_panel35.fill = GridBagConstraints.BOTH;
 		gbc_panel35.gridx = 6;
 		gbc_panel35.gridy = 5;
 		add(panel35, gbc_panel35);
+		
+		
+		
+		JLabel[] dates = {date1, date2, date3, date4, date5, date6, date7, date8, date9, date10,
+						date11, date12, date13, date14, date15, date16, date17, date18, date19, date20,
+						date21, date22, date23, date24, date25, date26, date27, date28, date29, date30,
+						date31, date32, date33, date34, date35};
+		
+		int[] numbers = {29, 30 , 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 1, 2, 3, 4};
+		Calendar cal = Calendar.getInstance();
+		int firstDay = cal.DAY_OF_WEEK;
+		int date = cal.DAY_OF_MONTH;
+		
+		
+		for(int i = 0; i < panels.length; i++){
+			
+			panels[i].setLayout(new BorderLayout(0, 0));
+			dates[i].setText("s");
+			panels[i].add(dates[i], BorderLayout.EAST);
+			
+		}
+		
+		
+		for(int i = 0; i < dates.length; i++){
+			
+			String day = Integer.toString(numbers[i]);
+			dates[i].setText(day);
+			
+		}
+		
 
 	}
 
+	public void setCalendar(ArrayList<Assignment> list){
+		
+		JPanel[] panels = {panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10,
+				panel11, panel12, panel13, panel14, panel15,panel16, panel17, panel18, panel19, panel20,
+				panel21, panel22, panel23, panel24, panel25,panel26, panel27, panel28, panel29, panel30,
+				panel31, panel32, panel33, panel34, panel35};
+		
+		JLabel[] lbl = {ass1, ass2, ass3, ass4, ass5, ass6, ass7, ass8, ass9, ass10};
+		
+		for(int z = 0; z < list.size(); z++){
+			
+			Assignment assignment = list.get(z);
+			panels[z].add(lbl[z]);
+			lbl[z].setText(assignment.title);
+			
+		}
+	}
 }
