@@ -21,7 +21,7 @@ public class AddAssignmentPanel extends JPanel {
 	private JTextField txtDayDue;
 	private JTextField txtMonthDue;
 	private JTextField txtYearDue;
-	private JComboBox<Course> classesDropdown = new JComboBox<Course>();
+	private JComboBox<Course> classesDropdown;
 	public AddAssignmentPanel() {
 		
 		JLabel lblAssignmentName = new JLabel("Assignment Name");
@@ -47,7 +47,8 @@ public class AddAssignmentPanel extends JPanel {
 		//txtMonthDue.setColumns(10);
 				
 		JComboBox<Integer> dayDropdown = new JComboBox<Integer>();
-		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
+		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] 
+					{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
 		//txtDayDue.setColumns(10);
 		
 		
@@ -64,7 +65,7 @@ public class AddAssignmentPanel extends JPanel {
 						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newHomework);
 						break;
@@ -72,7 +73,7 @@ public class AddAssignmentPanel extends JPanel {
 						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newTest);
 						break;
@@ -80,7 +81,7 @@ public class AddAssignmentPanel extends JPanel {
 						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(), 
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newStudy);
 						break;
@@ -88,7 +89,7 @@ public class AddAssignmentPanel extends JPanel {
 						Classwork newClassWork = new Classwork((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
@@ -107,37 +108,51 @@ public class AddAssignmentPanel extends JPanel {
 		JLabel lblDay = new JLabel("Day");
 		
 		JLabel lblYear = new JLabel("Year");
+		
+		JLabel classLbl = new JLabel("Course");
+		
+		classesDropdown = new JComboBox<Course>();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(15)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(15)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(lblTypeOfWork)
+										.addComponent(lblPriorityLevelOf)
+										.addComponent(btnAddAssignment)
+										.addComponent(classLbl, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(12)
+									.addComponent(lblAssignmentName)))
+							.addGap(23)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(priorityDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtAssignmentLabel, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+								.addComponent(typeDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(13)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblTypeOfWork)
-								.addComponent(lblPriorityLevelOf)
-								.addComponent(lblMonth)
-								.addComponent(btnAddAssignment)
-								.addComponent(lblDay)
+								.addComponent(lblYear)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblMonth)
+										.addComponent(lblDay))
+									.addGap(18)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(dayDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(monthDropdown, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGap(9)
+											.addComponent(classesDropdown, GroupLayout.PREFERRED_SIZE, 270, GroupLayout.PREFERRED_SIZE))))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGap(6)
-									.addComponent(dayDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addComponent(lblYear)
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-									.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-										.addGap(6)
-										.addComponent(yearDropdown, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-									.addComponent(monthDropdown, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE))))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(12)
-							.addComponent(lblAssignmentName)))
-					.addGap(23)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(priorityDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtAssignmentLabel, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-						.addComponent(typeDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(118, Short.MAX_VALUE))
+									.addComponent(yearDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
+					.addGap(23))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -155,18 +170,22 @@ public class AddAssignmentPanel extends JPanel {
 						.addComponent(lblPriorityLevelOf)
 						.addComponent(priorityDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblMonth)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(monthDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblDay)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(dayDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(classLbl)
+						.addComponent(classesDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(16)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblMonth)
+						.addComponent(monthDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(12)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblDay)
+						.addComponent(dayDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
 					.addComponent(lblYear)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(yearDropdown, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(btnAddAssignment))
 		);
 		setLayout(groupLayout);
@@ -177,5 +196,4 @@ public class AddAssignmentPanel extends JPanel {
 			classesDropdown.addItem(course);
 		}
 	}
-
 }
