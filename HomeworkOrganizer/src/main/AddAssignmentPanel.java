@@ -80,7 +80,6 @@ public class AddAssignmentPanel extends JPanel {
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newTest);
 						System.out.println(newTest);
-						invalidate();
 						break;
 					case 2:
 						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 

@@ -58,6 +58,42 @@ public class AssignmentCalendar extends JPanel {
 	JLabel date34 = new JLabel();
 	JLabel date35 = new JLabel();
 	
+	JLabel ass1 = new JLabel();
+	JLabel ass2 = new JLabel();
+	JLabel ass3 = new JLabel();
+	JLabel ass4 = new JLabel();
+	JLabel ass5 = new JLabel();
+	JLabel ass6 = new JLabel();
+	JLabel ass7 = new JLabel();
+	JLabel ass8 = new JLabel();
+	JLabel ass9 = new JLabel();
+	JLabel ass10 = new JLabel();
+	JLabel ass11 = new JLabel();
+	JLabel ass12 = new JLabel();
+	JLabel ass13 = new JLabel();
+	JLabel ass14 = new JLabel();
+	JLabel ass15 = new JLabel();
+	JLabel ass16 = new JLabel();
+	JLabel ass17 = new JLabel();
+	JLabel ass18 = new JLabel();
+	JLabel ass19 = new JLabel();
+	JLabel ass20 = new JLabel();
+	JLabel ass21 = new JLabel();
+	JLabel ass22 = new JLabel();
+	JLabel ass23 = new JLabel();
+	JLabel ass24 = new JLabel();
+	JLabel ass25 = new JLabel();
+	JLabel ass26 = new JLabel();
+	JLabel ass27 = new JLabel();
+	JLabel ass28 = new JLabel();
+	JLabel ass29 = new JLabel();
+	JLabel ass30 = new JLabel();
+	JLabel ass31 = new JLabel();
+	JLabel ass32 = new JLabel();
+	JLabel ass33 = new JLabel();
+	JLabel ass34 = new JLabel();
+	JLabel ass35 = new JLabel();
+	
 	
 	JPanel panel1 = new JPanel();
 	JPanel panel2 = new JPanel();
@@ -95,21 +131,13 @@ public class AssignmentCalendar extends JPanel {
 	JPanel panel34 = new JPanel();
 	JPanel panel35 = new JPanel();
 	
-	JLabel ass1 = new JLabel();
-	JLabel ass2 = new JLabel();
-	JLabel ass3 = new JLabel();
-	JLabel ass4 = new JLabel();
-	JLabel ass5 = new JLabel();
-	JLabel ass6 = new JLabel();
-	JLabel ass7 = new JLabel();
-	JLabel ass8 = new JLabel();
-	JLabel ass9 = new JLabel();
-	JLabel ass10 = new JLabel();
+	
 
 	
 	/**
 	 * Create the panel.
 	 */
+	@SuppressWarnings("deprecation")
 	public AssignmentCalendar() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{1, 1, 1, 1, 1, 1, 1};
@@ -466,6 +494,11 @@ public class AssignmentCalendar extends JPanel {
 						date21, date22, date23, date24, date25, date26, date27, date28, date29, date30,
 						date31, date32, date33, date34, date35};
 		
+		JLabel[] assignmentLbls = {ass1, ass2, ass3, ass4, ass5, ass6, ass7, ass8, ass9, ass10,
+				ass11, ass12, ass13, ass14, ass15, ass16, ass17, ass18, ass19, ass20,
+				ass21, ass22, ass23, ass24, ass25, ass26, ass27, ass28, ass29, ass30,
+				ass31, ass32, ass33, ass34, ass35};
+		
 		int[] numbers = {29, 30 , 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 1, 2, 3, 4};
 		Calendar cal = Calendar.getInstance();
 		int firstDay = cal.DAY_OF_WEEK;
@@ -475,18 +508,25 @@ public class AssignmentCalendar extends JPanel {
 		for(int i = 0; i < panels.length; i++){
 			
 			panels[i].setLayout(new BorderLayout(0, 0));
-			dates[i].setText("s");
+			//dates[i].setText("s");
+			
 			panels[i].add(dates[i], BorderLayout.EAST);
 			
 		}
 		
 		
 		for(int i = 0; i < dates.length; i++){
-			
+			for(int k = 0; k < HomeworkOrganizer.assignments.size(); k++){
+				Assignment a = HomeworkOrganizer.assignments.get(k);
+				if(a.getDueDate().getDay() == numbers[i]){
+					assignmentLbls[i].setText(a.title);
+				}
+			}
 			String day = Integer.toString(numbers[i]);
 			dates[i].setText(day);
 			
 		}
+		
 		 setCalendar();
 
 	}
@@ -503,9 +543,14 @@ public class AssignmentCalendar extends JPanel {
 		for(int z = 0; z < HomeworkOrganizer.assignments.size(); z++){
 			
 			Assignment assignment = HomeworkOrganizer.assignments.get(z);
-			panels[z].add(lbl[z]);
+			panels[z].add(lbl[z], BorderLayout.WEST);
 			lbl[z].setText(assignment.title);
 			
 		}
 	}
+	
+	public void refreshDate(){
+		
+	}
+	
 }
