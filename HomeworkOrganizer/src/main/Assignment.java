@@ -43,7 +43,6 @@ public abstract class Assignment implements DueDate, Comparator<Assignment>, Com
 	
 	Date dueDate = new Date();
 	
-	
 	public void setDueDate(int month, int day, int year){
 		checkDate(month, day, year);
 		dayofDue = day;

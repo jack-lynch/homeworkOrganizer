@@ -75,10 +75,8 @@ public class HomeworkOrganizer extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				addAssignmentPanel.setDropdown();
 				mainMenuPanel.refreshData();
+				assignmentsPanel.updatePanel();
 				calendarPanel.refreshDate();
-				
-				
-				
 			}
 		});
 		 
