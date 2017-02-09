@@ -487,11 +487,11 @@ public class AssignmentCalendar extends JPanel {
 			dates[i].setText(day);
 			
 		}
-		
+		 setCalendar();
 
 	}
 
-	public void setCalendar(ArrayList<Assignment> list){
+	public void setCalendar(){
 		
 		JPanel[] panels = {panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10,
 				panel11, panel12, panel13, panel14, panel15,panel16, panel17, panel18, panel19, panel20,
@@ -500,9 +500,9 @@ public class AssignmentCalendar extends JPanel {
 		
 		JLabel[] lbl = {ass1, ass2, ass3, ass4, ass5, ass6, ass7, ass8, ass9, ass10};
 		
-		for(int z = 0; z < list.size(); z++){
+		for(int z = 0; z < HomeworkOrganizer.assignments.size(); z++){
 			
-			Assignment assignment = list.get(z);
+			Assignment assignment = HomeworkOrganizer.assignments.get(z);
 			panels[z].add(lbl[z]);
 			lbl[z].setText(assignment.title);
 			

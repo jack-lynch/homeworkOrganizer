@@ -47,7 +47,8 @@ public class AddAssignmentPanel extends JPanel {
 		//txtMonthDue.setColumns(10);
 				
 		JComboBox<Integer> dayDropdown = new JComboBox<Integer>();
-		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
+		dayDropdown.setModel(new DefaultComboBoxModel<Integer>(new Integer[] 
+					{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 , 31}));
 		//txtDayDue.setColumns(10);
 		
 		
@@ -64,7 +65,7 @@ public class AddAssignmentPanel extends JPanel {
 						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newHomework);
 						break;
@@ -72,7 +73,7 @@ public class AddAssignmentPanel extends JPanel {
 						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newTest);
 						break;
@@ -80,7 +81,7 @@ public class AddAssignmentPanel extends JPanel {
 						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(), 
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newStudy);
 						break;
@@ -88,7 +89,7 @@ public class AddAssignmentPanel extends JPanel {
 						Classwork newClassWork = new Classwork((Course) classesDropdown.getSelectedItem(), 
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
-								dayDropdown.getComponentCount(),//Integer.parseInt(txtDayDue.getText()), 
+								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;
