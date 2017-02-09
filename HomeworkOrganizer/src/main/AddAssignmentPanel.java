@@ -69,6 +69,8 @@ public class AddAssignmentPanel extends JPanel {
 								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newHomework);
+						System.out.println(newHomework);
+						invalidate();
 						break;
 					case 1:
 						Test newTest = new Test((Course) classesDropdown.getSelectedItem(), 
@@ -77,6 +79,8 @@ public class AddAssignmentPanel extends JPanel {
 								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newTest);
+						System.out.println(newTest);
+						invalidate();
 						break;
 					case 2:
 						Study newStudy = new Study((Course) classesDropdown.getSelectedItem(), 
@@ -85,6 +89,8 @@ public class AddAssignmentPanel extends JPanel {
 								dayDropdown.getComponentCount(), 
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newStudy);
+						System.out.println(newStudy);
+						invalidate();
 						break;
 					case 3:
 						Classwork newClassWork = new Classwork((Course) classesDropdown.getSelectedItem(), 
@@ -93,6 +99,8 @@ public class AddAssignmentPanel extends JPanel {
 								dayDropdown.getComponentCount(),
 								yearDropdown.getComponentCount());
 						HomeworkOrganizer.assignments.add(newClassWork);
+						System.out.println(newClassWork);
+						invalidate();
 						break;
 					
 				}
