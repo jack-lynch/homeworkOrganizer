@@ -21,6 +21,10 @@ public class Test extends AtSchoolAssignment {
 		return true;
 	}
 	
+	public String toString(){
+		return course.getName() + " - " + title + ", due " + dueDate + ", TEST";
+	}
+	
 	
 	
 	

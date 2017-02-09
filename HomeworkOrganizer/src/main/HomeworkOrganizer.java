@@ -21,6 +21,8 @@ public class HomeworkOrganizer extends JFrame {
 	public static ArrayList<Course> courseList = new ArrayList<Course>();
 	public static ArrayList<Assignment> assignments = new ArrayList<Assignment>();
 
+	
+	public static AssignmentCalendar calendarPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -71,10 +73,10 @@ public class HomeworkOrganizer extends JFrame {
 				mainMenuPanel.refreshData();
 			}
 		});
+		 
 		
-		AssignmentCalendar calendarPanel = new AssignmentCalendar();
+		calendarPanel = new AssignmentCalendar();
 		tabbedPane.addTab("Calendar", null, calendarPanel, null);
-		calendarPanel.setCalendar(assignments);
 	}
 
 }

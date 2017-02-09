@@ -1,9 +1,10 @@
 package main;
 
 import java.text.ParseException;
+import java.util.Comparator;
 import java.util.Date;
 
-public abstract class Assignment implements DueDate{
+public abstract class Assignment implements DueDate, Comparator<Assignment>, Comparable<Assignment>{
 
 	protected int priority = -1;
 	protected Course course;
@@ -52,7 +53,50 @@ public abstract class Assignment implements DueDate{
 	}
 
 	public String toString(){
-		return course.getName() + " - " + title + ", due " + dueDate;
+		String month;
+		switch(dueDate.getMonth()){
+		case 0: 
+			month = "January";
+			break;
+		case 1: 
+			month = "February";
+			break;
+		case 2: 
+			month = "March";
+			break;
+		case 3: 
+			month = "April";
+			break;
+		case 4: 
+			month = "May";
+			break;
+		case 5: 
+			month = "June";
+			break;
+		case 6: 
+			month = "July";
+			break;
+		case 7: 
+			month = "August";
+			break;
+		case 8: 
+			month = "September";
+			break;
+		case 9: 
+			month = "October";
+			break;
+		case 10: 
+			month = "November";
+			break;
+		case 11: 
+			month = "December";
+		default:
+			month = "January";
+			break;
+			
+		}
+		
+		return title + " - " + course.getName() + ", due " + month + " " + dueDate.getDay() + ", 2017";
 	}
 	
 	protected double getClassGrade() {
@@ -90,12 +134,20 @@ public abstract class Assignment implements DueDate{
 	}
 
 	
-protected String getTitle() {
+	protected String getTitle() {
 		return title;
 	}
 
 	protected void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public int compare(Assignment d, Assignment d1) {
+	      return d.priority - d1.priority;
+	}
+	
+	public int compareTo(Assignment d) {
+	      return this.priority - d.priority;
 	}
 
 }
