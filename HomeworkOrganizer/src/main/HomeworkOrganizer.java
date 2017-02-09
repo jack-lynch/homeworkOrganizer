@@ -22,7 +22,7 @@ public class HomeworkOrganizer extends JFrame {
 	public static ArrayList<Assignment> assignments = new ArrayList<Assignment>();
 
 	public static AddAssignmentPanel addAssignmentPanel;
-	public static AssignmentCalendar calendarPanel;
+	public static CalendarPanel calendarPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -67,7 +67,7 @@ public class HomeworkOrganizer extends JFrame {
 		addAssignmentPanel = new AddAssignmentPanel();
 		tabbedPane.addTab("Add Assignment", null, addAssignmentPanel, null);
 		
-		calendarPanel = new AssignmentCalendar();
+		calendarPanel = new CalendarPanel();
 		tabbedPane.addTab("Calendar", null, calendarPanel, null);
 		
 		tabbedPane.addMouseListener(new MouseAdapter() {
