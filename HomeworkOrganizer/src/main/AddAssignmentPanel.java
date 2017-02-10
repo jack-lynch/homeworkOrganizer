@@ -76,7 +76,8 @@ public class AddAssignmentPanel extends JPanel {
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
 								dayDropdown.getSelectedIndex() + 1, //Integer.parseInt(txtDayDue.getText()), 
-								yearDropdown.getSelectedIndex() + 1);
+								yearDropdown.getSelectedIndex() + 1,
+								(int) priorityDropdown.getSelectedItem());
 						HomeworkOrganizer.assignments.add(newHomework);
 						break;
 					case 1:
@@ -84,7 +85,8 @@ public class AddAssignmentPanel extends JPanel {
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
 								dayDropdown.getSelectedIndex() + 1, //Integer.parseInt(txtDayDue.getText()), 
-								yearDropdown.getSelectedIndex() + 1);
+								yearDropdown.getSelectedIndex() + 1,
+								(int) priorityDropdown.getSelectedItem());
 						HomeworkOrganizer.assignments.add(newTest);
 						break;
 					case 2:
@@ -92,7 +94,8 @@ public class AddAssignmentPanel extends JPanel {
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
 								dayDropdown.getSelectedIndex() + 1, //Integer.parseInt(txtDayDue.getText()), 
-								yearDropdown.getSelectedIndex() + 1);
+								yearDropdown.getSelectedIndex() + 1,
+								(int) priorityDropdown.getSelectedItem());
 						HomeworkOrganizer.assignments.add(newStudy);
 						break;
 					case 3:
@@ -100,7 +103,8 @@ public class AddAssignmentPanel extends JPanel {
 								txtAssignmentLabel.getText(), 
 								monthDropdown.getSelectedIndex() + 1, 
 								dayDropdown.getSelectedIndex() + 1, //Integer.parseInt(txtDayDue.getText()), 
-								yearDropdown.getSelectedIndex() + 1);
+								yearDropdown.getSelectedIndex() + 1,
+								(int) priorityDropdown.getSelectedItem());
 						HomeworkOrganizer.assignments.add(newClassWork);
 						break;						
 					}
@@ -203,11 +207,8 @@ public class AddAssignmentPanel extends JPanel {
 
 	public void setDropdown() {
 		classesDropdown.removeAllItems();
-		for(int k = 0; k < HomeworkOrganizer.courseList.size();k++){
-			classesDropdown.addItem(HomeworkOrganizer.courseList.get(k));
-		}/*
   		for(Course course: HomeworkOrganizer.courseList){
   			classesDropdown.addItem(course);
-  		}*/
+  		}
 	}
 }

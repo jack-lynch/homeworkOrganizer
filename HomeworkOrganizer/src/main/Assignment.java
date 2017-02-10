@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.DuplicateFormatFlagsException;
 
-public abstract class Assignment implements DueDate, Comparator<Assignment>, Comparable<Assignment>{
+public abstract class Assignment implements DueDate, Comparable<Assignment>{
 
 	protected int priority = -1;
 	protected Course course;
@@ -144,12 +144,8 @@ public abstract class Assignment implements DueDate, Comparator<Assignment>, Com
 		this.title = title;
 	}
 	
-	public int compare(Assignment d, Assignment d1) {
-	      return d.priority - d1.priority;
-	}
-	
 	public int compareTo(Assignment d) {
-	      return this.priority - d.priority;
+	      return priority - d.priority;
 	}
 
 }

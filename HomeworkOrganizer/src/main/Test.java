@@ -8,7 +8,15 @@ public class Test extends AtSchoolAssignment {
 		setCourse(course);
 		setTitle(title);
 		setDueDate(month, day, year);
-		setPriority(3);
+		setPriority(1);
+		isTest = true;
+	}
+	
+	public Test(Course course, String title, int month, int day, int year, int priority){
+		setCourse(course);
+		setTitle(title);
+		setDueDate(month, day, year);
+		setPriority(priority);
 		isTest = true;
 	}
 

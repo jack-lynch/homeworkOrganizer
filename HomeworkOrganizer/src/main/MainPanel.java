@@ -1,13 +1,12 @@
 package main;
 
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.util.Collections;
+
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Font;
 
 public class MainPanel extends JPanel {
 	private JPanel assignmentsPanel;
@@ -62,6 +61,9 @@ public class MainPanel extends JPanel {
 	public void refreshData() {
 		assignmentsPanel.removeAll();
 		classesPanel.removeAll();
+		Collections.sort(HomeworkOrganizer.assignments);
+		Collections.reverse(HomeworkOrganizer.assignments);
+		
 		
 		for(Assignment assignment: HomeworkOrganizer.assignments){
 			JLabel assignmentLabel = new JLabel();
