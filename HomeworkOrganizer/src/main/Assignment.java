@@ -98,7 +98,7 @@ public abstract class Assignment implements DueDate, Comparable<Assignment>{
 			
 		}
 		
-		return title + " - " + course.getName() + ", due " + month + " " + dayofDue + ", 2017";
+		return title + " - " + course.getName() + " - priority " + priority + ", due " + month + " " + dayofDue + ", 2017";
 	}
 	
 	protected double getClassGrade() {
