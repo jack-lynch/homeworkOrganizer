@@ -22,6 +22,8 @@ public class AddAssignmentPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtAssignmentLabel;
+	Course[] courses = new Course[HomeworkOrganizer.courseList.size()];
+	
 	public JComboBox<Course> classesDropdown = new JComboBox<Course>();
 	public AddAssignmentPanel() {
 
@@ -57,7 +59,6 @@ public class AddAssignmentPanel extends JPanel {
 		//txtYearDue.setColumns(10);
 
 
-		Course[] courses = new Course[HomeworkOrganizer.courseList.size()];
 		courses = HomeworkOrganizer.courseList.toArray(courses);
 
 		//JComboBox<Course> classesDropdown = new JComboBox<Course>();
@@ -69,7 +70,7 @@ public class AddAssignmentPanel extends JPanel {
 		JButton btnAddAssignment = new JButton("Add Assignment");
 		btnAddAssignment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!txtAssignmentLabel.getText().equals("")){
+				if (!txtAssignmentLabel.getText().equals("") && courses.length >= 0) {
 					switch(typeDropdown.getSelectedIndex()){
 					case 0:
 						Homework newHomework = new Homework((Course) classesDropdown.getSelectedItem(), 
