@@ -7,6 +7,10 @@ import java.util.Collections;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.SwingConstants;
 
 public class MainPanel extends JPanel {
 	private JPanel assignmentsPanel;
@@ -22,20 +26,22 @@ public class MainPanel extends JPanel {
 		
 		panel_1 = new JPanel();
 		add(panel_1);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel_1.setLayout(new BorderLayout(0, 0));
+		
 		
 		panel_2 = new JPanel();
 		panel_1.add(panel_2);
 		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.Y_AXIS));
 		
-		lblCurrentAssignments = new JLabel("Current Assignments");
-		panel_2.add(lblCurrentAssignments);
-		lblCurrentAssignments.setFont(new Font("Lucida Grande", Font.BOLD, 16));
-		
 		
 		assignmentsPanel = new JPanel();
 		panel_2.add(assignmentsPanel);
 		assignmentsPanel.setLayout(new BoxLayout(assignmentsPanel, BoxLayout.Y_AXIS));
+		
+		lblCurrentAssignments = new JLabel("Current Assignments");
+		lblCurrentAssignments.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(lblCurrentAssignments, BorderLayout.NORTH);
+		lblCurrentAssignments.setFont(new Font("Lucida Grande", Font.BOLD, 16));
 		
 		panel = new JPanel();
 		add(panel);
@@ -67,8 +73,9 @@ public class MainPanel extends JPanel {
 		
 		for(Assignment assignment: HomeworkOrganizer.assignments){
 			JLabel assignmentLabel = new JLabel();
-			assignmentLabel.setText(assignment.toString());
-			assignmentsPanel.add(assignmentLabel);
+			
+			//assignmentLabel.setText(assignment.toString());
+			assignmentsPanel.add(new AssignmentVeiwer(assignment));
 		}
 		
 		for(Course course: HomeworkOrganizer.courseList){
