@@ -10,6 +10,8 @@ public abstract class Assignment implements DueDate, Comparable<Assignment>{
 	protected int priority = -1;
 	protected Course course;
 	
+	protected String type;
+	
 	protected int dayofDue;
 	/**
 	 * @return the course
@@ -195,5 +197,7 @@ public abstract class Assignment implements DueDate, Comparable<Assignment>{
 	public int compareTo(Assignment d) {
 	      return priority - d.priority;
 	}
+
+	abstract String getType();
 
 }

@@ -38,6 +38,11 @@ public class Homework extends AtHomeAssignment {
 	}
 	
 	@Override
+	String getType() {
+		return "Test";
+	}
+	
+	@Override
 	boolean isHomework() {
 		// TODO Auto-generated method stub
 		return false;

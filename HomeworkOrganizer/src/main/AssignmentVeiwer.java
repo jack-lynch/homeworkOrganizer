@@ -23,36 +23,36 @@ public class AssignmentVeiwer extends JPanel {
         setMinimumSize(minSize);
         setMaximumSize(maxSize);
         
-		//setSize(350, 150);
 		JLabel lblAssingmentname = new JLabel("Title: " + a.getTitle());
 		add(lblAssingmentname, BorderLayout.NORTH);
 		
-		JButton btnNewButton = new JButton("New button");
+		//Will delete a comment...
+		JButton btnNewButton = new JButton("Done");
 		add(btnNewButton, BorderLayout.EAST);
 		
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblClass = new JLabel("Course: " + a.getCourseName());
-		lblClass.setBounds(6, 6, 90, 16);
+		JLabel lblClass = new JLabel("Course: " + a.getCourseName() + ", \t \t Time: " + Integer.toString(a.getClassPeriod()));
+		lblClass.setBounds(6, 6, 359, 16);
 		panel.add(lblClass);
 		
 		
-		JLabel lblType = new JLabel("type");
-		lblType.setBounds(6, 34, 82, 22);
+		JLabel lblType = new JLabel("Type: " + a.getType()  + ", \t \t Priority: " +Integer.toString(a.getPriority()));
+		lblType.setBounds(6, 34, 359, 22);
 		panel.add(lblType);
 		
-		JLabel lblTime = new JLabel("Time: " + Integer.toString(a.getClassPeriod()));
-		lblTime.setBounds(114, 6, 95, 16);
+		/*JLabel lblTime = new JLabel();
+		lblTime.setBounds(160, 6, 95, 16);
 		panel.add(lblTime);
 		
-		JLabel lblPriority = new JLabel("Priority: " +Integer.toString(a.getPriority()));
-		lblPriority.setBounds(114, 34, 61, 22);
-		panel.add(lblPriority);
+		JLabel lblPriority = new JLabel();
+		lblPriority.setBounds(160, 34, 61, 22);
+		panel.add(lblPriority);*/
 		
 		JLabel lblDate = new JLabel("Due: " +a.printDueDate());
-		lblDate.setBounds(6, 67, 150, 16);
+		lblDate.setBounds(6, 67, 215, 16);
 		panel.add(lblDate);
 
 	}

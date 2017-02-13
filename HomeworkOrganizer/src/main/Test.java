@@ -32,6 +32,12 @@ public class Test extends AtSchoolAssignment {
 	public String toString(){
 		return course.getName() + " - " + title + ", due " + dayofDue + ", TEST";
 	}
+
+	@Override
+	String getType() {
+		return "Test";
+	}
+
 	
 	
 	

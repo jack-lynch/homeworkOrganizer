@@ -11,6 +11,9 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class MainPanel extends JPanel {
 	private JPanel assignmentsPanel;
@@ -44,6 +47,7 @@ public class MainPanel extends JPanel {
 		lblCurrentAssignments.setFont(new Font("Lucida Grande", Font.BOLD, 16));
 		
 		panel = new JPanel();
+		panel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
 		add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		

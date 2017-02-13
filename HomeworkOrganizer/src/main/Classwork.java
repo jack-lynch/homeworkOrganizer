@@ -21,6 +21,11 @@ public class Classwork extends AtSchoolAssignment {
 	}
 	
 	@Override
+	String getType() {
+		return "Test";
+	}
+	
+	@Override
 	boolean isSchoolWork() {
 		return isClasswork;
 	}
