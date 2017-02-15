@@ -23,6 +23,8 @@ public class HomeworkOrganizer extends JFrame {
 
 	public static AddAssignmentPanel addAssignmentPanel;
 	public static CalendarPanel calendarPanel;
+	
+	public static MainPanel mainMenuPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +57,7 @@ public class HomeworkOrganizer extends JFrame {
 		
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
-		MainPanel mainMenuPanel = new MainPanel();
+		mainMenuPanel = new MainPanel();
 		tabbedPane.addTab("Main Menu", null, mainMenuPanel, "Main Menu");
 		
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
@@ -76,11 +78,13 @@ public class HomeworkOrganizer extends JFrame {
 				mainMenuPanel.refreshData();
 				assignmentsPanel.updatePanel();
 				calendarPanel.refreshDate();
+				
 			}
 		});
 		 
 		
 		
 	}
+	
 
 }

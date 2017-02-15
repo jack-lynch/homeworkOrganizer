@@ -12,6 +12,8 @@ public abstract class Assignment implements DueDate, Comparable<Assignment>{
 	
 	protected String type;
 	
+	private boolean delete = false;
+	
 	protected int dayofDue;
 	/**
 	 * @return the course
@@ -199,5 +201,13 @@ public abstract class Assignment implements DueDate, Comparable<Assignment>{
 	}
 
 	abstract String getType();
+
+	public boolean isDelete() {
+		return delete;
+	}
+
+	public void setDelete(boolean delete) {
+		this.delete = delete;
+	}
 
 }

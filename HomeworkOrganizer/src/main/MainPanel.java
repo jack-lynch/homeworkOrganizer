@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.util.Collections;
 
 import javax.swing.BoxLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -33,6 +34,7 @@ public class MainPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
 		panel_1 = new JPanel();
+		//panel_1.setMaximumSize(new Dimension(400, 700));
 		add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
@@ -45,11 +47,9 @@ public class MainPanel extends JPanel {
 		
 		panel_2 = new JScrollPane();
 		panel_2.setPreferredSize(panel_2Size);
-		panel_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		panel_1.add(panel_2, BorderLayout.CENTER);
 		
 		panel = new JPanel();
-		panel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
 		add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -74,6 +74,7 @@ public class MainPanel extends JPanel {
 		
         
 		refreshData();
+		
 	}
 
 	public void refreshData() {
@@ -82,13 +83,24 @@ public class MainPanel extends JPanel {
 		Collections.sort(HomeworkOrganizer.assignments);
 		Collections.reverse(HomeworkOrganizer.assignments);
 		
-		
-		for(Assignment assignment: HomeworkOrganizer.assignments){
-			JLabel assignmentLabel = new JLabel();
-			
-			//assignmentLabel.setText(assignment.toString());
-			assignmentsPanel.add(new AssignmentVeiwer(assignment));
+		JLabel noAssignment = new JLabel("No Assignments!");
+		if(HomeworkOrganizer.assignments.size() > 0){
+			assignmentsPanel.setLayout(new BoxLayout(assignmentsPanel, BoxLayout.Y_AXIS));
+			for(Assignment assignment: HomeworkOrganizer.assignments){
+				if(assignment.isDelete() == true){
+					HomeworkOrganizer.assignments.remove(assignment);
+				}else{
+					assignmentsPanel.add(new AssignmentVeiwer(assignment));
+					}
+			}
+		} else{
+			assignmentsPanel.setLayout(new BorderLayout(0, 0));
+			noAssignment.setHorizontalAlignment(SwingConstants.CENTER);
+			noAssignment.setVerticalAlignment(SwingConstants.CENTER);
+			assignmentsPanel.add(noAssignment, BorderLayout.CENTER);
 		}
+		
+		
 		
 		Dimension minSize = new Dimension(350, HomeworkOrganizer.assignments.size() * 100);
         assignmentsPanel.setPreferredSize(minSize);
