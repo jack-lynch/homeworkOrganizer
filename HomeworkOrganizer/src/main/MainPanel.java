@@ -14,6 +14,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import java.awt.Component;
 
 public class MainPanel extends JPanel {
 	private JPanel assignmentsPanel;
@@ -22,8 +25,10 @@ public class MainPanel extends JPanel {
 	private JLabel lblCurrentAssignments;
 	private JPanel panel;
 	private JPanel panel_1;
-	private JPanel panel_2;
 	private JPanel panel_3;
+	private JScrollPane panel_2;
+	
+	
 	public MainPanel() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
@@ -31,20 +36,17 @@ public class MainPanel extends JPanel {
 		add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
-		
-		panel_2 = new JPanel();
-		panel_1.add(panel_2);
-		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.Y_AXIS));
-		
-		
-		assignmentsPanel = new JPanel();
-		panel_2.add(assignmentsPanel);
-		assignmentsPanel.setLayout(new BoxLayout(assignmentsPanel, BoxLayout.Y_AXIS));
-		
 		lblCurrentAssignments = new JLabel("Current Assignments");
 		lblCurrentAssignments.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblCurrentAssignments, BorderLayout.NORTH);
 		lblCurrentAssignments.setFont(new Font("Lucida Grande", Font.BOLD, 16));
+		
+		Dimension panel_2Size = new Dimension(350, 400);
+		
+		panel_2 = new JScrollPane();
+		panel_2.setPreferredSize(panel_2Size);
+		panel_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		panel_1.add(panel_2, BorderLayout.CENTER);
 		
 		panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
@@ -65,6 +67,12 @@ public class MainPanel extends JPanel {
 		
 		
 		
+		assignmentsPanel = new JPanel();
+		//add(assignmentsPanel);
+		panel_2.setViewportView(assignmentsPanel);
+		assignmentsPanel.setLayout(new BoxLayout(assignmentsPanel, BoxLayout.Y_AXIS));
+		
+        
 		refreshData();
 	}
 
@@ -81,6 +89,9 @@ public class MainPanel extends JPanel {
 			//assignmentLabel.setText(assignment.toString());
 			assignmentsPanel.add(new AssignmentVeiwer(assignment));
 		}
+		
+		Dimension minSize = new Dimension(350, HomeworkOrganizer.assignments.size() * 100);
+        assignmentsPanel.setPreferredSize(minSize);
 		
 		for(Course course: HomeworkOrganizer.courseList){
 			JLabel courseLabel = new JLabel();

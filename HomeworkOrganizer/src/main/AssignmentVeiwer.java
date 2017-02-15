@@ -15,7 +15,7 @@ public class AssignmentVeiwer extends JPanel {
 	 * Create the panel.
 	 */
 	public AssignmentVeiwer(Assignment a) {
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		setLayout(new BorderLayout(0, 0));
 		
 		Dimension minSize = new Dimension(350, 100);
