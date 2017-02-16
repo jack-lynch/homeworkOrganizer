@@ -10,6 +10,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class HomeworkOrganizer extends JFrame {
 
@@ -48,6 +51,7 @@ public class HomeworkOrganizer extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.ORANGE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -58,6 +62,7 @@ public class HomeworkOrganizer extends JFrame {
 		contentPane.add(tabbedPane, BorderLayout.NORTH);
 		
 		mainMenuPanel = new MainPanel();
+		mainMenuPanel.setBackground(UIManager.getColor("Button.disabledText"));
 		tabbedPane.addTab("Main Menu", null, mainMenuPanel, "Main Menu");
 		
 		AssignmentPanel assignmentsPanel = new AssignmentPanel();
