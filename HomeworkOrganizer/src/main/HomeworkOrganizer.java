@@ -1,18 +1,17 @@
 package main;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.border.EmptyBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.UIManager;
-import java.awt.SystemColor;
-import java.awt.Color;
+import javax.swing.border.EmptyBorder;
 
 public class HomeworkOrganizer extends JFrame {
 
@@ -37,6 +36,7 @@ public class HomeworkOrganizer extends JFrame {
 				try {
 					HomeworkOrganizer frame = new HomeworkOrganizer();
 					frame.setVisible(true);
+//					Image ico = new Image("logo.jpg");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
